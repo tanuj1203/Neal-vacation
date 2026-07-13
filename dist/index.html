@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Optimization -->
+  <title>NealVacation | Luxury Stays & Bespoke Travel Experiences</title>
+  <meta name="description" content="Explore the world with NealVacation. Offering customized luxury tours, international stays, visa assistance, and flight bookings for the ultimate premium travel experience.">
+  <meta name="keywords" content="luxury travel, custom vacations, honeymoon tours, international travel, corporate tours, premium hotel bookings, NealVacation">
+  
+  <!-- Favicon placeholder -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300B4D8'%3E%3Cpath d='M21.5 12a9.5 9.5 0 1 1-19 0 9.5 9.5 0 0 1 19 0Z'/%3E%3C/svg%3E">
+  
+  <!-- Stylesheets -->
+  
+  <!-- Lucide Icons CDN for immediate access in HTML -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script type="module" crossorigin src="/assets/index-C-FGveGJ.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DFicutf_.css">
+</head>
+<body data-theme="light">
+  
+  <!-- Cursor Glow Effect -->
+  <div id="cursor-glow" aria-hidden="true"></div>
+
+  <!-- Premium Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader-logo">NEAL<span class="logo-span">VACATION</span></div>
+    <div class="loader-bar-wrap">
+      <div class="loader-bar" id="loader-progress"></div>
+    </div>
+    <div class="loader-text">PREPARING BESPOKE EXPERIENCES...</div>
+  </div>
+
+  <!-- Header -->
+  <header id="header-nav">
+    <div class="container nav-container">
+      <a href="#" class="logo" id="logo-nav">
+        <i data-lucide="compass" style="color: var(--primary-cyan)"></i>
+        NEAL<span class="logo-span">VACATION</span>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="#" class="nav-link">Home</a></li>
+        <li><a href="#destinations" class="nav-link">Destinations</a></li>
+        <li><a href="#packages" class="nav-link">Packages</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#experiences" class="nav-link">Luxury</a></li>
+        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle dark mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button class="btn btn-primary" id="login-open-btn">
+          <i data-lucide="user"></i> Login
+        </button>
+        <button class="menu-btn" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-video-container">
+      <!-- Direct premium public drone travel footage URL -->
+      <video class="hero-video" autoplay muted loop playsinline id="hero-bg-video">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-maldives-resort-drone-shot-41775-large.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="hero-overlay"></div>
+    
+    <!-- Animated Airplane Path -->
+    <div class="airplane-svg-container">
+      <svg width="100%" height="100%" viewBox="0 0 1200 400" preserveAspectRatio="none">
+        <path class="airplane-path" d="M 0,200 Q 300,50 600,250 T 1200,100" />
+        <g class="flying-airplane" id="airplane-g">
+          <path d="M22,9c0-1.1-.9-2-2-2h-3L10,1L8,1l3,6H7L5,4H3l2,4H3l-1,1v1h1l1-1h2l-2,4h2l2-3h4l-3,6h2l7-6h3c1.1 0 2-.9 2-2V9z" fill="var(--accent-gold)" transform="scale(1.5)" />
+        </g>
+      </svg>
+    </div>
+
+    <!-- Floating Travel Icons -->
+    <div class="floating-icons-container" id="hero-floating-icons">
+      <div class="floating-icon-card plane"><i data-lucide="plane"></i></div>
+      <div class="floating-icon-card passport"><i data-lucide="scroll"></i></div>
+      <div class="floating-icon-card suitcase"><i data-lucide="briefcase"></i></div>
+      <div class="floating-icon-card location"><i data-lucide="map-pin"></i></div>
+    </div>
+
+    <!-- Floating Clouds -->
+    <div class="clouds-container">
+      <div class="cloud c1"></div>
+      <div class="cloud c2"></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-content">
+        <h1 id="hero-title">Your Journey Begins<br>With <span class="gold-gradient-text">NealVacation</span></h1>
+        <p id="hero-subtitle">Explore the world with personalized holidays, luxury stays, and unforgettable bespoke experiences tailored to perfection.</p>
+        <div class="hero-ctas">
+          <a href="#destinations" class="btn btn-primary"><i data-lucide="compass"></i> Explore Tours</a>
+          <a href="#inquiry" class="btn btn-outline" style="border-color: #FFFFFF; color: #FFFFFF;"><i data-lucide="calendar"></i> Plan My Trip</a>
+        </div>
+      </div>
+      
+      <!-- Hero Search Bar -->
+      <div class="hero-search-wrap">
+        <div class="hero-search-bar glass-panel" id="main-search-bar">
+          <div class="search-field">
+            <label for="search-dest"><i data-lucide="search" style="width:14px; display:inline; vertical-align:middle; margin-right:4px;"></i> Destination</label>
+            <input type="text" id="search-dest" placeholder="Where to go?">
+          </div>
+          <div class="search-divider"></div>
+          <div class="search-field">
+            <label for="search-budget"><i data-lucide="banknote" style="width:14px; display:inline; vertical-align:middle; margin-right:4px;"></i> Budget</label>
+            <select id="search-budget">
+              <option value="">Any Range</option>
+              <option value="luxury">Luxury Premium</option>
+              <option value="adventure">Mid-Range Adventure</option>
+              <option value="student">Student Friendly</option>
+            </select>
+          </div>
+          <div class="search-divider"></div>
+          <div class="search-field">
+            <label for="search-date"><i data-lucide="calendar-days" style="width:14px; display:inline; vertical-align:middle; margin-right:4px;"></i> Travel Date</label>
+            <input type="date" id="search-date">
+          </div>
+          <div class="search-divider"></div>
+          <div class="search-field">
+            <label for="search-type"><i data-lucide="sparkles" style="width:14px; display:inline; vertical-align:middle; margin-right:4px;"></i> Travel Type</label>
+            <select id="search-type">
+              <option value="">Choose Type</option>
+              <option value="honeymoon">Honeymoon</option>
+              <option value="family">Family Package</option>
+              <option value="corporate">Corporate Tour</option>
+              <option value="solo">Solo Adventure</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" id="search-submit-btn" style="padding: 1rem;"><i data-lucide="search"></i> Find</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Destinations -->
+  <section id="destinations" class="destinations-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Exquisite Getaways</span>
+        <h2 class="section-title">Popular Destinations</h2>
+      </div>
+      
+      <div class="destinations-toggle">
+        <button class="toggle-btn active" id="toggle-domestic">Domestic</button>
+        <button class="toggle-btn" id="toggle-international">International</button>
+      </div>
+      
+      <div class="destinations-grid" id="destinations-container">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Trending Packages -->
+  <section id="packages" class="packages-section" style="background: var(--card-bg);">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Specially Curated</span>
+        <h2 class="section-title">Trending Packages</h2>
+      </div>
+      
+      <div class="packages-filter-bar">
+        <button class="filter-btn active" data-filter="all">All Packages</button>
+        <button class="filter-btn" data-filter="luxury">Luxury</button>
+        <button class="filter-btn" data-filter="family">Family</button>
+        <button class="filter-btn" data-filter="honeymoon">Honeymoon</button>
+        <button class="filter-btn" data-filter="adventure">Adventure</button>
+        <button class="filter-btn" data-filter="corporate">Corporate</button>
+      </div>
+      
+      <div class="packages-grid" id="packages-container">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose NealVacation (Stats & Map) -->
+  <section id="why-choose" class="stats-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Our Footprint</span>
+        <h2 class="section-title">Why Choose NealVacation</h2>
+      </div>
+      
+      <!-- Counter Stats -->
+      <div class="stats-grid">
+        <div class="stat-item glass-panel">
+          <div class="stat-num" data-val="20000">0</div>
+          <div class="stat-label">Happy Travelers</div>
+        </div>
+        <div class="stat-item glass-panel">
+          <div class="stat-num" data-val="50">0</div>
+          <div class="stat-label">Countries Explored</div>
+        </div>
+        <div class="stat-item glass-panel">
+          <div class="stat-num" data-val="4.9">0</div>
+          <div class="stat-label">Rating (5.0 Max)</div>
+        </div>
+        <div class="stat-item glass-panel">
+          <div class="stat-num" data-val="24">0</div>
+          <div class="stat-label">Support Hours</div>
+        </div>
+      </div>
+
+      <!-- Interactive World Map -->
+      <h3 style="text-align: center; margin-bottom: 2.5rem; font-family: var(--font-outfit); font-size: 1.8rem;">Explore Our Premium Outlets & Top Destinations</h3>
+      <div class="map-container">
+        <!-- SVG Map Background -->
+        <svg id="world-map-svg" viewBox="0 0 1000 480" xmlns="http://www.w3.org/2000/svg">
+          <!-- Simple stylized background shapes simulating world map landmasses -->
+          <rect width="1000" height="480" fill="rgba(10, 35, 66, 0.02)"/>
+          <path d="M 150 120 Q 250 80 300 150 T 400 180 T 500 250 T 600 300 T 700 220 T 800 120 T 900 150 T 950 250 T 800 350 T 600 400 T 500 350 T 400 420 T 300 450 T 150 350 Z" fill="rgba(15, 76, 129, 0.05)" stroke="var(--border-color)" stroke-width="1.5" />
+          <path d="M 50 180 Q 90 210 110 240 T 130 290 T 100 320 T 50 280 Z" fill="rgba(15, 76, 129, 0.05)" />
+        </svg>
+        
+        <!-- Pins -->
+        <div class="map-pin" style="top: 25%; left: 18%;" id="pin-1">
+          <div class="map-pin-pulse"></div>
+          <div class="map-pin-tooltip">New York Head Office</div>
+        </div>
+        <div class="map-pin" style="top: 30%; left: 47%;" id="pin-2">
+          <div class="map-pin-pulse"></div>
+          <div class="map-pin-tooltip">Paris Regional Outlet</div>
+        </div>
+        <div class="map-pin" style="top: 48%; left: 58%;" id="pin-3">
+          <div class="map-pin-pulse"></div>
+          <div class="map-pin-tooltip">Dubai Luxury Hub</div>
+        </div>
+        <div class="map-pin" style="top: 55%; left: 70%;" id="pin-4">
+          <div class="map-pin-pulse"></div>
+          <div class="map-pin-tooltip">Goa Beach Retreat</div>
+        </div>
+        <div class="map-pin" style="top: 60%; left: 88%;" id="pin-5">
+          <div class="map-pin-pulse"></div>
+          <div class="map-pin-tooltip">Bali Tropical Office</div>
+        </div>
+        <div class="map-pin" style="top: 35%; left: 85%;" id="pin-6">
+          <div class="map-pin-pulse"></div>
+          <div class="map-pin-tooltip">Tokyo Experience Center</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Travel Services -->
+  <section id="services" style="background: var(--card-bg);">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Exemplary Amenities</span>
+        <h2 class="section-title">Travel Services</h2>
+      </div>
+      
+      <div class="services-grid" id="services-container">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Luxury Experiences -->
+  <section id="experiences" class="experiences-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Beyond Ordinary</span>
+        <h2 class="section-title">Luxury Experiences</h2>
+      </div>
+      
+      <div class="experiences-grid" id="experiences-container">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="testimonials-section" style="background: var(--card-bg);">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">True Stories</span>
+        <h2 class="section-title">Travelers Reviews</h2>
+      </div>
+      
+      <div class="testimonials-slider" id="testimonials-slider">
+        <!-- Injected via JavaScript -->
+      </div>
+      
+      <div class="slider-nav" id="testimonials-dots">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Travel Gallery -->
+  <section id="gallery" class="gallery-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Captured Memories</span>
+        <h2 class="section-title">Travel Gallery</h2>
+      </div>
+      
+      <div class="gallery-grid" id="gallery-container">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Inquiry Form -->
+  <section id="inquiry" class="inquiry-section">
+    <div class="container">
+      <div class="inquiry-grid">
+        <div class="inquiry-info">
+          <h2>Start Planning<br>Your Dream Trip</h2>
+          <p>Contact our elite travel managers for a personalized luxury package matching your specific interests, budgets, and desires.</p>
+          
+          <div class="inquiry-perks">
+            <div class="perk-item">
+              <i data-lucide="badge-check" class="perk-icon"></i>
+              <div>
+                <h4 class="perk-title">Best Price Guarantee</h4>
+                <p class="perk-desc">Premium experiences at the most competitive luxury market prices.</p>
+              </div>
+            </div>
+            <div class="perk-item">
+              <i data-lucide="shield-check" class="perk-icon"></i>
+              <div>
+                <h4 class="perk-title">Verified Luxury Stays</h4>
+                <p class="perk-desc">Direct partnerships with 5-star hotels globally for high-class amenities.</p>
+              </div>
+            </div>
+            <div class="perk-item">
+              <i data-lucide="headset" class="perk-icon"></i>
+              <div>
+                <h4 class="perk-title">24×7 Concierge Support</h4>
+                <p class="perk-desc">Your dedicated travel counselor is just one call away, anywhere, anytime.</p>
+              </div>
+            </div>
+            <div class="perk-item">
+              <i data-lucide="plane-takeoff" class="perk-icon"></i>
+              <div>
+                <h4 class="perk-title">Hassle-Free Visas</h4>
+                <p class="perk-desc">End-to-end processing for swift international clearance.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="inquiry-form-wrap glass-panel" id="inquiry-consultation-form">
+          <form class="inquiry-form" id="consultation-form">
+            <div class="form-group">
+              <label for="inquiry-name">Your Full Name</label>
+              <input type="text" id="inquiry-name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="inquiry-phone">Phone Number</label>
+                <input type="tel" id="inquiry-phone" placeholder="+1 (234) 567-8901" required>
+              </div>
+              <div class="form-group">
+                <label for="inquiry-destination">Destination</label>
+                <input type="text" id="inquiry-destination" placeholder="e.g. Dubai, Goa" required>
+              </div>
+            </div>
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="inquiry-date">Travel Date</label>
+                <input type="date" id="inquiry-date" required>
+              </div>
+              <div class="form-group">
+                <label for="inquiry-travelers">Travelers</label>
+                <input type="number" id="inquiry-travelers" min="1" max="100" value="2" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inquiry-budget">Estimated Budget</label>
+              <select id="inquiry-budget" required>
+                <option value="unlimited">Luxury (No Limit)</option>
+                <option value="premium">Premium ($10k - $25k)</option>
+                <option value="standard">Standard ($5k - $10k)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="inquiry-message">Special Requests / Message</label>
+              <textarea id="inquiry-message" rows="3" placeholder="Tell us about your dream trip..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="justify-content: center;"><i data-lucide="sparkles"></i> Get Free Travel Consultation</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <i data-lucide="compass" style="color: var(--primary-cyan)"></i>
+            NEAL<span class="logo-span">VACATION</span>
+          </a>
+          <p class="footer-desc">Curating premier international getaways and luxury accommodations. Your trusted gateway to bespoke travel and unforgettable voyages.</p>
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            <a href="#" class="social-icon" aria-label="Linkedin"><i data-lucide="linkedin"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#destinations">Bespoke Destinations</a></li>
+            <li><a href="#packages">Trending Packages</a></li>
+            <li><a href="#services">Our Travel Services</a></li>
+            <li><a href="#experiences">Luxury Experience Packages</a></li>
+            <li><a href="#inquiry">Get Travel Estimate</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Popular Stays</h4>
+          <ul class="footer-links">
+            <li><a href="#" class="dest-link">Goa Beachfronts</a></li>
+            <li><a href="#" class="dest-link">Kashmir Houseboats</a></li>
+            <li><a href="#" class="dest-link">Dubai Desert Safaris</a></li>
+            <li><a href="#" class="dest-link">Bali Luxury Villas</a></li>
+            <li><a href="#" class="dest-link">Maldives Overwater Bungalows</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Stay Connected</h4>
+          <form class="newsletter-form" id="newsletter-form-submit">
+            <p style="font-size:0.85rem; color: rgba(255,255,255,0.6); margin-bottom: 0.5rem;">Subscribe to our high-society travel magazine.</p>
+            <div class="newsletter-input-wrap">
+              <input type="email" placeholder="Your Luxury Email" required id="newsletter-email">
+              <button type="submit">Join</button>
+            </div>
+          </form>
+          
+          <h4 class="footer-title" style="margin-top: 1.5rem; margin-bottom: 1rem;">Locate Us</h4>
+          <div class="footer-map-wrap">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1837926187647!2d-73.98773122421946!3d40.75889497138766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25859c25ffb5b%3A0xc4fb98e5200236a!2sTimes%20Square!5e0!3m2!1sen!2sin!4v1689400000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 NealVacation Ltd. All rights reserved. Designed for ultra-luxury experiences.</p>
+        <p><a href="#" style="color: rgba(255,255,255,0.55); text-decoration: none; margin-right: 1.5rem;">Privacy Policy</a> <a href="#" style="color: rgba(255,255,255,0.55); text-decoration: none;">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Buttons -->
+  <button class="back-to-top" id="scroll-to-top-btn" aria-label="Scroll back to top">
+    <i data-lucide="arrow-up"></i>
+  </button>
+  
+  <button class="whatsapp-float" id="whatsapp-booking-btn" aria-label="Book on WhatsApp">
+    <i data-lucide="phone" style="width:28px; height:28px;"></i>
+  </button>
+
+  <!-- WIDGET MODALS -->
+
+  <!-- 1. AI Planner Dialog/Window -->
+  <div class="ai-planner-toggle" id="ai-planner-toggle-btn">
+    <i data-lucide="bot"></i> AI Trip Planner
+  </div>
+  <div class="ai-planner-panel glass-panel" id="ai-planner-window">
+    <div class="ai-planner-header">
+      <div class="ai-header-title">
+        <i data-lucide="sparkles" style="color: var(--accent-gold)"></i> AI Luxury Concierge
+      </div>
+      <button class="ai-header-close" id="ai-planner-close-btn"><i data-lucide="x"></i></button>
+    </div>
+    <div class="ai-planner-body" id="ai-chat-history">
+      <div class="ai-message bot">
+        Hello! I am your <strong>NealVacation AI Concierge</strong>. Let's design your custom luxury itinerary. To start:<br><br>
+        <strong>1. How many days would you like your trip to be?</strong>
+        <div class="chat-options-container" style="margin-top: 0.6rem;">
+          <button class="chat-option-btn" data-val="3">3 Days</button>
+          <button class="chat-option-btn" data-val="5">5 Days</button>
+          <button class="chat-option-btn" data-val="7">7 Days</button>
+        </div>
+      </div>
+    </div>
+    <div class="ai-planner-footer">
+      <input type="text" class="ai-planner-input" id="ai-chat-input" placeholder="e.g. Plan a 4-day trip to Goa with beach activities...">
+      <button class="ai-planner-send" id="ai-chat-send-btn"><i data-lucide="send"></i></button>
+    </div>
+  </div>
+
+  <!-- 2. Utility Widgets (Weather & Currency) -->
+  <button class="widgets-toggle" id="widgets-toggle-btn" aria-label="Toggle Travel Tools">
+    <i data-lucide="wrench"></i>
+  </button>
+  <div class="widgets-container-panel" id="widgets-panel">
+    <!-- Weather Widget -->
+    <div class="utility-widget glass-panel" id="weather-widget">
+      <div class="widget-title">
+        <i data-lucide="cloud-sun"></i> Weather Widget
+      </div>
+      <div class="weather-flex">
+        <select id="weather-city-select" class="weather-city-select">
+          <option value="goa">Goa</option>
+          <option value="kashmir">Kashmir</option>
+          <option value="dubai">Dubai</option>
+          <option value="paris">Paris</option>
+          <option value="japan">Tokyo</option>
+          <option value="maldives">Maldives</option>
+        </select>
+        <span class="weather-desc" id="weather-description">Sunny & Warm</span>
+      </div>
+      <div class="weather-main-info">
+        <i data-lucide="sun" style="color: var(--accent-gold); width:32px; height:32px;" id="weather-icon"></i>
+        <div class="weather-temp" id="weather-temp-val">30&deg;C</div>
+      </div>
+    </div>
+    
+    <!-- Currency Widget -->
+    <div class="utility-widget glass-panel" id="currency-widget">
+      <div class="widget-title">
+        <i data-lucide="refresh-cw"></i> Currency Converter
+      </div>
+      <div class="currency-converter">
+        <div class="currency-row">
+          <input type="number" id="currency-amount" value="100" class="currency-input">
+          <select id="currency-from" class="currency-select">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="INR">INR</option>
+            <option value="AED">AED</option>
+          </select>
+        </div>
+        <div class="currency-row">
+          <i data-lucide="arrow-down-up" style="color: var(--primary-cyan); width:16px;"></i>
+          <span class="currency-result" id="currency-result-val">8,340 INR</span>
+          <select id="currency-to" class="currency-select">
+            <option value="INR">INR</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="AED">AED</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Package Comparison Drawer -->
+  <div class="compare-drawer" id="compare-bottom-drawer">
+    <div class="compare-drawer-content">
+      <div>
+        <h4 style="font-family: var(--font-outfit); font-weight:700;">Compare Selected Packages</h4>
+        <div class="compare-items" id="compare-bubbles-container">
+          <!-- Injected via JavaScript -->
+        </div>
+      </div>
+      <div class="compare-btn-wrap">
+        <button class="btn btn-primary" id="compare-submit-btn" style="padding: 0.6rem 1.5rem;"><i data-lucide="columns"></i> Compare Now</button>
+        <button class="btn btn-outline" id="compare-clear-btn" style="padding: 0.6rem 1.2rem; border-color: var(--text-main);"><i data-lucide="trash-2"></i> Clear</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Comparison Modal -->
+  <div class="compare-modal" id="compare-modal">
+    <div class="compare-modal-box">
+      <div class="compare-modal-header">
+        <h3>NealVacation Package Comparison</h3>
+        <button class="compare-modal-close" id="compare-modal-close-btn"><i data-lucide="x" style="width:24px; height:24px;"></i></button>
+      </div>
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr id="compare-table-head">
+              <th>Features</th>
+              <!-- Injected dynamically -->
+            </tr>
+          </thead>
+          <tbody id="compare-table-body">
+            <!-- Injected dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. User Login Modal -->
+  <div class="login-modal" id="login-modal">
+    <div class="login-modal-box glass-panel">
+      <button class="login-close" id="login-close-btn"><i data-lucide="x"></i></button>
+      <div class="login-title-wrap">
+        <h3>Welcome Back</h3>
+        <p>Login to access your premium membership and booked trips</p>
+      </div>
+      <form class="login-form" id="login-form-submit">
+        <div class="form-group">
+          <label for="login-email">Email Address</label>
+          <input type="email" id="login-email" placeholder="name@domain.com" required>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" placeholder="••••••••" required>
+        </div>
+        <a href="#" class="forgot-pass">Forgot Password?</a>
+        <button type="submit" class="btn btn-primary" style="justify-content: center;"><i data-lucide="lock"></i> Access Account</button>
+        <div class="login-footer-text">
+          Don't have a luxury account? <a href="#" id="signup-instead">Sign Up Now</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 6. Live Chat Window -->
+  <button class="live-chat-toggle" id="live-chat-toggle-btn" aria-label="Open support chat">
+    <i data-lucide="message-square"></i>
+  </button>
+  <div class="live-chat-panel glass-panel" id="live-chat-window">
+    <div class="chat-panel-header">
+      <div class="chat-user-status">
+        <div class="status-dot"></div>
+        <div>
+          <h4 style="font-family: var(--font-outfit); font-weight:700; font-size: 0.95rem;">Live Support Concierge</h4>
+          <span style="font-size: 0.75rem; opacity:0.8;">Online & Ready</span>
+        </div>
+      </div>
+      <button class="chat-panel-close" id="live-chat-close-btn"><i data-lucide="x"></i></button>
+    </div>
+    <div class="chat-panel-body" id="live-chat-body">
+      <div class="chat-message bot">
+        Welcome to NealVacation! How can I assist you with your flight, hotels, or visa services today?
+      </div>
+    </div>
+    <div class="chat-panel-footer">
+      <input type="text" class="chat-panel-input" id="live-chat-input" placeholder="Type a message...">
+      <button class="chat-panel-send" id="live-chat-send-btn"><i data-lucide="send"></i></button>
+    </div>
+  </div>
+
+  <!-- 7. Lightbox Image Gallery Modal -->
+  <div class="lightbox-modal" id="lightbox-modal">
+    <button class="lightbox-close" id="lightbox-close-btn"><i data-lucide="x" style="width:28px; height:28px;"></i></button>
+    <img src="" alt="Travel view" class="lightbox-img" id="lightbox-image">
+    <div class="lightbox-caption" id="lightbox-caption">Travel Caption</div>
+  </div>
+
+  <!-- Core Javascript -->
+</body>
+</html>
