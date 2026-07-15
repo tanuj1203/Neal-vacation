@@ -6,7 +6,7 @@ import confetti from 'canvas-confetti';
 const DESTINATIONS = {
   domestic: [
     { id: 'goa', name: 'Goa', img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80', stays: '120+ Stays', reviews: '4.9 ★ (1.2k)', price: 37500 },
-    { id: 'kashmir', name: 'Kashmir', img: 'https://images.unsplash.com/photo-1566228015668-4c45dbc4e2f5?auto=format&fit=crop&w=600&q=80', stays: '45+ Stays', reviews: '4.8 ★ (850)', price: 54000 },
+    { id: 'kashmir', name: 'Kashmir', img: 'https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', stays: '45+ Stays', reviews: '4.8 ★ (850)', price: 54000 },
     { id: 'kerala', name: 'Kerala', img: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=600&q=80', stays: '80+ Stays', reviews: '4.7 ★ (980)', price: 41500 },
     { id: 'andaman', name: 'Andaman Islands', img: 'https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=600&q=80', stays: '35+ Stays', reviews: '4.9 ★ (420)', price: 66500 },
     { id: 'rajasthan', name: 'Rajasthan', img: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=600&q=80', stays: '90+ Stays', reviews: '4.8 ★ (1.1k)', price: 50000 },
@@ -141,7 +141,7 @@ const PACKAGES = [
     duration: '3 Days / 2 Nights',
     price: 20000,
     rating: '4.8',
-    img: 'https://images.unsplash.com/photo-1620075267033-09d12ec75b40?auto=format&fit=crop&w=600&q=80',
+    img: 'https://images.unsplash.com/photo-1641741628047-adb7acdd4109?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     highlights: ['Kamakhya Temple', 'Brahmaputra Cruise', 'Umananda Temple'],
     visa: 'Not Required',
     accommodation: 'Premium Heritage Stay',
@@ -154,7 +154,7 @@ const PACKAGES = [
     duration: '4 Days / 3 Nights',
     price: 23000,
     rating: '4.8',
-    img: 'https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=600&q=80',
+    img: 'https://images.unsplash.com/photo-1687735175748-a19b5adb7591?q=80&w=1375&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     highlights: ['Neelkanth Temple', 'Yoga & Meditation', 'Rishikesh Rafting'],
     visa: 'Not Required',
     accommodation: 'Riverside Deluxe Resort',
@@ -167,7 +167,7 @@ const PACKAGES = [
     duration: '3 Days / 2 Nights',
     price: 24000,
     rating: '4.9',
-    img: 'https://images.unsplash.com/photo-1602643163983-ed0babc39797?auto=format&fit=crop&w=600&q=80',
+    img: 'https://images.unsplash.com/photo-1668689723080-c50f6e823de5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dhttps://images.unsplash.com/photo-1659901981145-dbc056431a8b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     highlights: ['Sam Sand Dunes', 'Desert Camping', 'Camel Safari'],
     visa: 'Not Required',
     accommodation: 'Luxury Desert Camp',
@@ -253,14 +253,14 @@ const SERVICES = [
 
 const EXPERIENCES = [
   { title: 'Scuba Diving', label: 'Andaman & Maldives', img: 'https://images.unsplash.com/photo-1582967788606-a171c1080cb0?auto=format&fit=crop&w=600&q=80', desc: 'Swim through vibrant corals with certified PADI divemasters.' },
-  { title: 'Skydiving', label: 'Dubai Jumeirah', img: 'https://images.unsplash.com/photos/white-and-red-airplane-in-mid-air-during-daytime-H22w-tq0SeQ', desc: 'Freefall over the iconic Palm Jumeirah in a breathtaking leap.' },
+  { title: 'Skydiving', label: 'Dubai Jumeirah', img: 'https://images.unsplash.com/photo-1659901981145-dbc056431a8b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', desc: 'Freefall over the iconic Palm Jumeirah in a breathtaking leap.' },
   { title: 'Northern Lights Glamping', label: 'Norway & Iceland', img: 'https://images.unsplash.com/photo-1483168527879-c66136b56105?auto=format&fit=crop&w=600&q=80', desc: 'Watch the aurora dance from your private, heated geodesic glass dome.' }
 ];
 
 const TESTIMONIALS = [
-  { name: 'Johnathan Miller', role: 'CEO, Nexus Corp', avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80', rating: 5, text: 'NealVacation planned our global corporate retreat in Paris. The logistics were flawless, luxury accommodations were out of this world, and their 24/7 concierge took care of every request instantly!' },
+  { name: 'Rishi Srivastav', role: 'Owner,Neal infratech', avatar: 'https://media-lko1-2.cdn.whatsapp.net/v/t61.24694-24/738503781_1769555614420132_7336010525148402842_n.jpg?ccb=11-4&oh=01_Q5Aa5AFQVJkvgChDn6DojRbUnpnh9Ik112JQa0eDz7jyUhsLmg&oe=6A64D966&_nc_sid=5e03e0&_nc_cat=107', rating: 5, text: 'NealVacation planned our global corporate retreat in Paris. The logistics were flawless, luxury accommodations were out of this world, and their 24/7 concierge took care of every request instantly!' },
   { name: 'Sophia & Liam', role: 'Honeymooners', avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80', rating: 5, text: 'Our honeymoon in the Maldives was pure magic. The private water villa, candlelight beach dinner, and airport transfers arranged by NealVacation made us feel like royalty. Thank you!' },
-  { name: 'Devendra Sharma', role: 'Family Traveler', avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80', rating: 5, text: 'The Rajasthan heritage package exceeded all our expectations. Staying at the palaces made us feel so connected to royalty. Incredible visa support, cab services, and guided tour layouts.' }
+  { name: 'Harshit Jha', role: 'Digital influencer', avatar: 'https://media-lko1-2.cdn.whatsapp.net/v/t61.24694-24/594539464_2330755740667633_1982193046938899641_n.jpg?ccb=11-4&oh=01_Q5Aa5AEEG1nKRhVy6MHYApzN_-OuMeRmL9CSzMzgxQWtxjvKHw&oe=6A64CB81&_nc_sid=5e03e0&_nc_cat=104', rating: 5, text: 'The Rajasthan heritage package exceeded all our expectations. Staying at the palaces made us feel so connected to royalty. Incredible visa support, cab services, and guided tour layouts.' }
 ];
 
 const GALLERY = [
