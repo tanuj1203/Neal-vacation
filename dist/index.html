@@ -16,7 +16,7 @@
   
   <!-- Lucide Icons CDN for immediate access in HTML -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script type="module" crossorigin src="/assets/index-C-FGveGJ.js"></script>
+  <script type="module" crossorigin src="/assets/index-CadNK_Z_.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/index-DFicutf_.css">
 </head>
 <body data-theme="light">
@@ -53,9 +53,6 @@
       <div class="nav-actions">
         <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle dark mode">
           <i data-lucide="moon"></i>
-        </button>
-        <button class="btn btn-primary" id="login-open-btn">
-          <i data-lucide="user"></i> Login
         </button>
         <button class="menu-btn" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
           <i data-lucide="menu"></i>
@@ -230,9 +227,9 @@
         </svg>
         
         <!-- Pins -->
-        <div class="map-pin" style="top: 25%; left: 18%;" id="pin-1">
+        <div class="map-pin" style="top: 50%; left: 72%;" id="pin-1">
           <div class="map-pin-pulse"></div>
-          <div class="map-pin-tooltip">New York Head Office</div>
+          <div class="map-pin-tooltip">Prayagraj Head Office</div>
         </div>
         <div class="map-pin" style="top: 30%; left: 47%;" id="pin-2">
           <div class="map-pin-pulse"></div>
@@ -453,9 +450,15 @@
             </div>
           </form>
           
-          <h4 class="footer-title" style="margin-top: 1.5rem; margin-bottom: 1rem;">Locate Us</h4>
+          <h4 class="footer-title" style="margin-top: 1.5rem; margin-bottom: 0.5rem;">Locate Us</h4>
+          <p style="font-size:0.8rem; color: rgba(255,255,255,0.6); margin-bottom: 0.8rem; line-height: 1.4;">
+            <a href="https://www.google.com/maps/dir//Neal+Vacations+-+Best+Magh+Mela+Tour+and+Travels+in+Prayagraj,+Alka+Puri+Colony,+Prayagraj,+Uttar+Pradesh+211001/@25.4509056,81.8479104,11z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8836573ed0c2967d:0x496233d729f7aa1d!2m2!1d81.8236313!2d25.4636517?entry=ttu&g_ep=EgoyMDI2MDcxMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="color: var(--accent-gold); text-decoration: none; display: flex; align-items: flex-start; gap: 0.3rem;">
+              <i data-lucide="map-pin" style="width:14px; min-width:14px; margin-top: 2px;"></i>
+              <span>Alka Puri Colony, Prayagraj, Uttar Pradesh 211001</span>
+            </a>
+          </p>
           <div class="footer-map-wrap">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1837926187647!2d-73.98773122421946!3d40.75889497138766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25859c25ffb5b%3A0xc4fb98e5200236a!2sTimes%20Square!5e0!3m2!1sen!2sin!4v1689400000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://maps.google.com/maps?q=Neal%20Vacations%20-%20Best%20Magh%20Mela%20Tour%20and%20Travels%20in%20Prayagraj,%20Alka%20Puri%20Colony,%20Prayagraj,%20Uttar%20Pradesh%20211001&t=&z=14&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" style="border:0; width:100%; height:150px; border-radius: 8px;"></iframe>
           </div>
         </div>
       </div>
@@ -562,6 +565,7 @@
     </div>
   </div>
 
+
   <!-- 3. Package Comparison Drawer -->
   <div class="compare-drawer" id="compare-bottom-drawer">
     <div class="compare-drawer-content">
@@ -601,31 +605,7 @@
     </div>
   </div>
 
-  <!-- 5. User Login Modal -->
-  <div class="login-modal" id="login-modal">
-    <div class="login-modal-box glass-panel">
-      <button class="login-close" id="login-close-btn"><i data-lucide="x"></i></button>
-      <div class="login-title-wrap">
-        <h3>Welcome Back</h3>
-        <p>Login to access your premium membership and booked trips</p>
-      </div>
-      <form class="login-form" id="login-form-submit">
-        <div class="form-group">
-          <label for="login-email">Email Address</label>
-          <input type="email" id="login-email" placeholder="name@domain.com" required>
-        </div>
-        <div class="form-group">
-          <label for="login-password">Password</label>
-          <input type="password" id="login-password" placeholder="••••••••" required>
-        </div>
-        <a href="#" class="forgot-pass">Forgot Password?</a>
-        <button type="submit" class="btn btn-primary" style="justify-content: center;"><i data-lucide="lock"></i> Access Account</button>
-        <div class="login-footer-text">
-          Don't have a luxury account? <a href="#" id="signup-instead">Sign Up Now</a>
-        </div>
-      </form>
-    </div>
-  </div>
+
 
   <!-- 6. Live Chat Window -->
   <button class="live-chat-toggle" id="live-chat-toggle-btn" aria-label="Open support chat">

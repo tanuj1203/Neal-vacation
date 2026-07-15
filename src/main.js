@@ -14,7 +14,7 @@ const DESTINATIONS = {
   international: [
     { id: 'dubai', name: 'Dubai', img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80', stays: '250+ Stays', reviews: '4.9 ★ (2.3k)', price: 'From $1,200/day' },
     { id: 'bali', name: 'Bali', img: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80', stays: '180+ Stays', reviews: '4.8 ★ (3.1k)', price: 'From $800/day' },
-    { id: 'thailand', name: 'Thailand', img: 'https://images.unsplash.com/photo-1528181304800-2f17024136a7?auto=format&fit=crop&w=600&q=80', stays: '140+ Stays', reviews: '4.7 ★ (1.9k)', price: 'From $550/day' },
+    { id: 'thailand', name: 'Thailand', img: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=600&q=80', stays: '140+ Stays', reviews: '4.7 ★ (1.9k)', price: 'From $550/day' },
     { id: 'singapore', name: 'Singapore', img: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=600&q=80', stays: '95+ Stays', reviews: '4.8 ★ (1.5k)', price: 'From $950/day' },
     { id: 'maldives', name: 'Maldives', img: 'https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=600&q=80', stays: '60+ Stays', reviews: '5.0 ★ (4.2k)', price: 'From $2,500/day' },
     { id: 'vietnam', name: 'Vietnam', img: 'https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=600&q=80', stays: '75+ Stays', reviews: '4.8 ★ (1.1k)', price: 'From $600/day' }
@@ -114,7 +114,7 @@ const PACKAGES = [
     duration: '3 Days / 2 Nights',
     price: 220,
     rating: '4.7',
-    img: 'https://images.unsplash.com/photo-1627894172421-39c4a88db641?auto=format&fit=crop&w=600&q=80',
+    img: 'https://images.unsplash.com/photo-1602643163983-ed0babc39797?auto=format&fit=crop&w=600&q=80',
     highlights: ['Ganga Aarti', 'Lakshman Jhula', 'Har Ki Pauri'],
     visa: 'Not Required',
     accommodation: 'Deluxe Cozy Hotels',
@@ -140,7 +140,7 @@ const PACKAGES = [
     duration: '3 Days / 2 Nights',
     price: 250,
     rating: '4.8',
-    img: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=600&q=80',
+    img: 'https://images.unsplash.com/photo-1620075267033-09d12ec75b40?auto=format&fit=crop&w=600&q=80',
     highlights: ['Kamakhya Temple', 'Brahmaputra Cruise', 'Umananda Temple'],
     visa: 'Not Required',
     accommodation: 'Premium Heritage Stay',
@@ -166,7 +166,7 @@ const PACKAGES = [
     duration: '3 Days / 2 Nights',
     price: 290,
     rating: '4.9',
-    img: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80',
+    img: 'https://images.unsplash.com/photo-1602643163983-ed0babc39797?auto=format&fit=crop&w=600&q=80',
     highlights: ['Sam Sand Dunes', 'Desert Camping', 'Camel Safari'],
     visa: 'Not Required',
     accommodation: 'Luxury Desert Camp',
@@ -192,7 +192,7 @@ const PACKAGES = [
     duration: '3 Days / 2 Nights',
     price: 210,
     rating: '4.7',
-    img: 'https://images.unsplash.com/photo-1561361513-2d000a50f0db?auto=format&fit=crop&w=600&q=80',
+    img: 'https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=600&q=80',
     highlights: ['Sharda Devi Temple', 'Gupt Godavari', 'Ramghat Aarti'],
     visa: 'Not Required',
     accommodation: 'Comfort Cozy Hotel',
@@ -252,7 +252,7 @@ const SERVICES = [
 
 const EXPERIENCES = [
   { title: 'Scuba Diving', label: 'Andaman & Maldives', img: 'https://images.unsplash.com/photo-1582967788606-a171c1080cb0?auto=format&fit=crop&w=600&q=80', desc: 'Swim through vibrant corals with certified PADI divemasters.' },
-  { title: 'Skydiving', label: 'Dubai Jumeirah', img: 'https://images.unsplash.com/photo-1533749047139-189de3cf06d3?auto=format&fit=crop&w=600&q=80', desc: 'Freefall over the iconic Palm Jumeirah in a breathtaking leap.' },
+  { title: 'Skydiving', label: 'Dubai Jumeirah', img: 'https://images.unsplash.com/photos/white-and-red-airplane-in-mid-air-during-daytime-H22w-tq0SeQ', desc: 'Freefall over the iconic Palm Jumeirah in a breathtaking leap.' },
   { title: 'Northern Lights Glamping', label: 'Norway & Iceland', img: 'https://images.unsplash.com/photo-1483168527879-c66136b56105?auto=format&fit=crop&w=600&q=80', desc: 'Watch the aurora dance from your private, heated geodesic glass dome.' }
 ];
 
@@ -283,6 +283,9 @@ let aiChatState = {
   landscape: null,
   climate: null
 };
+let liveChatState = {
+  waitingForPhone: false
+};
 
 // --- INIT APP ---
 window.addEventListener('DOMContentLoaded', () => {
@@ -305,7 +308,7 @@ function initLoadingScreen() {
   const bar = document.getElementById('loader-progress');
   const screen = document.getElementById('loading-screen');
   let width = 0;
-  
+
   const interval = setInterval(() => {
     width += Math.floor(Math.random() * 25) + 10;
     if (width >= 100) {
@@ -364,10 +367,10 @@ function initCursorGlow() {
 function renderDestinations() {
   const container = document.getElementById('destinations-container');
   if (!container) return;
-  
+
   const list = DESTINATIONS[activeDestinationTab];
   container.innerHTML = '';
-  
+
   list.forEach((dest, index) => {
     const card = document.createElement('div');
     card.className = 'destination-card';
@@ -391,20 +394,20 @@ function renderDestinations() {
     `;
     container.appendChild(card);
   });
-  
+
   if (window.lucide) window.lucide.createIcons();
 }
 
 function renderPackages() {
   const container = document.getElementById('packages-container');
   if (!container) return;
-  
+
   container.innerHTML = '';
-  
+
   PACKAGES.forEach(pkg => {
     const isWished = wishlist.includes(pkg.id);
     const isCompared = selectedComparePackages.some(p => p.id === pkg.id);
-    
+
     const card = document.createElement('div');
     card.className = 'package-card';
     card.setAttribute('data-category', pkg.category);
@@ -442,7 +445,7 @@ function renderPackages() {
     `;
     container.appendChild(card);
   });
-  
+
   if (window.lucide) window.lucide.createIcons();
   setupPackageCardEvents();
 }
@@ -450,9 +453,9 @@ function renderPackages() {
 function renderServices() {
   const container = document.getElementById('services-container');
   if (!container) return;
-  
+
   container.innerHTML = '';
-  
+
   SERVICES.forEach(serv => {
     const card = document.createElement('div');
     card.className = 'service-card glass-panel';
@@ -465,16 +468,16 @@ function renderServices() {
     `;
     container.appendChild(card);
   });
-  
+
   if (window.lucide) window.lucide.createIcons();
 }
 
 function renderExperiences() {
   const container = document.getElementById('experiences-container');
   if (!container) return;
-  
+
   container.innerHTML = '';
-  
+
   EXPERIENCES.forEach((exp, idx) => {
     const card = document.createElement('div');
     // Span the first experience to 2 columns for a luxurious masonry feel
@@ -497,20 +500,20 @@ function renderTestimonials() {
   const slider = document.getElementById('testimonials-slider');
   const dots = document.getElementById('testimonials-dots');
   if (!slider || !dots) return;
-  
+
   slider.innerHTML = '';
   dots.innerHTML = '';
-  
+
   TESTIMONIALS.forEach((test, idx) => {
     const slide = document.createElement('div');
     slide.className = `testimonial-slide ${idx === 0 ? 'active' : ''}`;
     slide.setAttribute('data-slide-index', idx);
-    
+
     let starsHtml = '';
-    for(let s=0; s < test.rating; s++) {
+    for (let s = 0; s < test.rating; s++) {
       starsHtml += '<i data-lucide="star" style="width:18px; fill:currentColor;"></i>';
     }
-    
+
     slide.innerHTML = `
       <div class="testimonial-card glass-panel">
         <div class="test-stars">${starsHtml}</div>
@@ -525,14 +528,14 @@ function renderTestimonials() {
       </div>
     `;
     slider.appendChild(slide);
-    
+
     // Dot button
     const dot = document.createElement('button');
     dot.className = `slider-dot ${idx === 0 ? 'active' : ''}`;
     dot.setAttribute('data-dot-index', idx);
     dots.appendChild(dot);
   });
-  
+
   if (window.lucide) window.lucide.createIcons();
   setupTestimonialSlider();
 }
@@ -540,9 +543,9 @@ function renderTestimonials() {
 function renderGallery() {
   const container = document.getElementById('gallery-container');
   if (!container) return;
-  
+
   container.innerHTML = '';
-  
+
   GALLERY.forEach(img => {
     const item = document.createElement('div');
     item.className = 'gallery-item';
@@ -555,15 +558,15 @@ function renderGallery() {
         </div>
       </div>
     `;
-    
+
     // Lightbox hook
     item.addEventListener('click', () => {
       openLightbox(img.img, img.caption);
     });
-    
+
     container.appendChild(item);
   });
-  
+
   if (window.lucide) window.lucide.createIcons();
 }
 
@@ -589,13 +592,13 @@ function setupPackageCardEvents() {
       localStorage.setItem('nealvacation_wishlist', JSON.stringify(wishlist));
     });
   });
-  
+
   // Compare Checkboxes
   document.querySelectorAll('.compare-checkbox').forEach(cb => {
     cb.addEventListener('change', (e) => {
       const id = cb.getAttribute('data-pkg-id');
       const pkg = PACKAGES.find(p => p.id === id);
-      
+
       if (cb.checked) {
         if (selectedComparePackages.length >= 3) {
           cb.checked = false;
@@ -609,7 +612,7 @@ function setupPackageCardEvents() {
       updateCompareDrawer();
     });
   });
-  
+
   // Package booking triggers consultation form fill
   document.querySelectorAll('.pkg-book-btn, .dest-book-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -628,12 +631,12 @@ function updateCompareDrawer() {
   const drawer = document.getElementById('compare-bottom-drawer');
   const container = document.getElementById('compare-bubbles-container');
   if (!drawer || !container) return;
-  
+
   if (selectedComparePackages.length === 0) {
     drawer.classList.remove('open');
     return;
   }
-  
+
   container.innerHTML = '';
   selectedComparePackages.forEach(pkg => {
     const bubble = document.createElement('div');
@@ -642,7 +645,7 @@ function updateCompareDrawer() {
       <span>${pkg.name.split(' ').slice(0, 3).join(' ')}...</span>
       <button class="compare-item-remove" data-pkg-id="${pkg.id}"><i data-lucide="x" style="width:12px; height:12px;"></i></button>
     `;
-    
+
     bubble.querySelector('.compare-item-remove').addEventListener('click', () => {
       selectedComparePackages = selectedComparePackages.filter(p => p.id !== pkg.id);
       // Uncheck original checkbox
@@ -650,10 +653,10 @@ function updateCompareDrawer() {
       if (originalCb) originalCb.checked = false;
       updateCompareDrawer();
     });
-    
+
     container.appendChild(bubble);
   });
-  
+
   if (window.lucide) window.lucide.createIcons();
   drawer.classList.add('open');
 }
@@ -662,7 +665,7 @@ function updateCompareDrawer() {
 function setupTestimonialSlider() {
   const slides = document.querySelectorAll('.testimonial-slide');
   const dots = document.querySelectorAll('.slider-dot');
-  
+
   function showSlide(index) {
     slides.forEach((slide, idx) => {
       if (idx === index) {
@@ -675,14 +678,14 @@ function setupTestimonialSlider() {
     });
     activeTestimonialIndex = index;
   }
-  
+
   dots.forEach(dot => {
     dot.addEventListener('click', () => {
       const target = parseInt(dot.getAttribute('data-dot-index'));
       showSlide(target);
     });
   });
-  
+
   // Auto slide loop (every 7 seconds)
   setInterval(() => {
     let next = activeTestimonialIndex + 1;
@@ -696,9 +699,9 @@ function openLightbox(imgUrl, caption) {
   const modal = document.getElementById('lightbox-modal');
   const img = document.getElementById('lightbox-image');
   const cap = document.getElementById('lightbox-caption');
-  
+
   if (!modal || !img || !cap) return;
-  
+
   img.src = imgUrl;
   cap.innerText = caption;
   modal.classList.add('open');
@@ -730,11 +733,11 @@ function initWidgets() {
       const city = wSelect.value;
       const data = WEATHER_DATA[city];
       if (!data) return;
-      
+
       const tempVal = document.getElementById('weather-temp-val');
       const descVal = document.getElementById('weather-description');
       const wIcon = document.getElementById('weather-icon');
-      
+
       gsap.to([tempVal, descVal, wIcon], {
         opacity: 0,
         y: -10,
@@ -751,40 +754,56 @@ function initWidgets() {
             wIcon.style.color = 'var(--primary-cyan)';
           }
           if (window.lucide) window.lucide.createIcons();
-          
+
           gsap.to([tempVal, descVal, wIcon], { opacity: 1, y: 0, duration: 0.3 });
         }
       });
     });
   }
-  
+
   // Currency Inputs
   const cAmt = document.getElementById('currency-amount');
   const cFrom = document.getElementById('currency-from');
   const cTo = document.getElementById('currency-to');
-  
+
   if (cAmt && cFrom && cTo) {
     const handleConvert = () => {
       const amt = parseFloat(cAmt.value) || 0;
       const fromVal = cFrom.value;
       const toVal = cTo.value;
-      
+
       const rate = EXCHANGE_RATES[fromVal]?.[toVal] || 1;
       const res = (amt * rate).toLocaleString(undefined, { maximumFractionDigits: 2 });
-      
+
       document.getElementById('currency-result-val').innerText = `${res} ${toVal}`;
     };
-    
+
     cAmt.addEventListener('input', handleConvert);
     cFrom.addEventListener('change', handleConvert);
     cTo.addEventListener('change', handleConvert);
   }
+
+}
+
+function saveLeadToDb(lead) {
+  // Post to Express backend -> MongoDB
+  fetch('/api/leads', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(lead)
+  })
+  .then(res => {
+    if (res.ok) {
+      console.log('Lead saved to MongoDB successfully');
+    }
+  })
+  .catch(err => console.error('Error posting lead to MongoDB:', err));
 }
 
 // Helper to programmatically construct custom itineraries
 function getCustomItinerary(days, landscape, climate) {
   const title = `NealVacation Bespoke ${landscape === 'beach' ? 'Beach' : 'Mountain'} ${climate === 'monsoon' ? 'Monsoon' : 'Warm'} Getaway`;
-  
+
   let dayDetails = [];
   if (landscape === 'beach' && climate === 'monsoon') {
     dayDetails = [
@@ -827,11 +846,11 @@ function getCustomItinerary(days, landscape, climate) {
       "Morning resort yoga and chauffeured drive to the airport."
     ];
   }
-  
+
   // Format days
   let html = `<div style="border-left:3px solid var(--accent-gold); padding-left:0.8rem; margin-top:0.8rem; font-size: 0.85rem; line-height: 1.5; color: var(--text-main);"><strong>${title} (${days} Days / ${days - 1} Nights)</strong><br><br>`;
   for (let i = 0; i < days; i++) {
-    const detail = i === days - 1 
+    const detail = i === days - 1
       ? "Luxury resort checkout, souvenir collection, and VIP chauffeur departure."
       : (dayDetails[i] || "Relaxing leisure day exploring local premium sights.");
     html += `• <strong>Day ${i + 1}</strong>: ${detail}<br>`;
@@ -845,27 +864,27 @@ function handleAiChat(optionVal = null) {
   const input = document.getElementById('ai-chat-input');
   const chatHistory = document.getElementById('ai-chat-history');
   if (!input || !chatHistory) return;
-  
+
   const isEvent = optionVal && typeof optionVal === 'object' && (optionVal instanceof Event || optionVal.preventDefault !== undefined);
   const actualVal = isEvent ? null : optionVal;
-  
+
   let text = '';
   if (actualVal) {
     text = actualVal;
   } else {
     text = input.value.trim();
   }
-  
+
   if (!text) return;
   if (!actualVal) input.value = '';
-  
+
   // Append user message bubble
   const userBubble = document.createElement('div');
   userBubble.className = 'ai-message user';
   userBubble.innerText = actualVal ? (actualVal === '3' ? '3 Days' : actualVal === '5' ? '5 Days' : actualVal === '7' ? '7 Days' : actualVal === 'beach' ? 'Beach' : actualVal === 'mountain' ? 'Mountain' : actualVal === 'monsoon' ? 'Monsoon' : actualVal === 'warm' ? 'Warm' : actualVal) : text;
   chatHistory.appendChild(userBubble);
   chatHistory.scrollTop = chatHistory.scrollHeight;
-  
+
   // Bot Loading Bubble
   const loadBubble = document.createElement('div');
   loadBubble.className = 'ai-message bot';
@@ -873,22 +892,22 @@ function handleAiChat(optionVal = null) {
   chatHistory.appendChild(loadBubble);
   if (window.lucide) window.lucide.createIcons();
   chatHistory.scrollTop = chatHistory.scrollHeight;
-  
+
   setTimeout(() => {
     let responseText = '';
     const q = text.toLowerCase();
-    
+
     // Check if user wants to reset/restart the chat flow
     if (q.includes('restart') || q.includes('reset') || q.includes('start over')) {
       aiChatState = { step: 'collect_days', days: 5, landscape: null, climate: null };
     }
-    
+
     // STATE MACHINE
     if (aiChatState.step === 'collect_days') {
       const days = parseInt(text.replace(/\D/g, '')) || 5;
       aiChatState.days = days;
       aiChatState.step = 'collect_landscape';
-      
+
       responseText = `🎯 <strong>Preferences Saved: ${days} Days</strong><br><br>
       Let's customize the scenery:<br>
       <strong>2. Are you a beach or mountain person?</strong>
@@ -896,12 +915,12 @@ function handleAiChat(optionVal = null) {
         <button class="chat-option-btn" data-val="beach">🏖️ Beach</button>
         <button class="chat-option-btn" data-val="mountain">⛰️ Mountain</button>
       </div>`;
-    } 
+    }
     else if (aiChatState.step === 'collect_landscape') {
       const landscape = q.includes('mountain') ? 'mountain' : 'beach';
       aiChatState.landscape = landscape;
       aiChatState.step = 'collect_climate';
-      
+
       responseText = `🎯 <strong>Style Saved: ${landscape === 'beach' ? '🏖️ Beach Lover' : '⛰️ Mountain Explorer'}</strong><br><br>
       Let's select the weather environment:<br>
       <strong>3. Do you prefer a monsoon (rainy/misty) or warm (sunny) climate?</strong>
@@ -909,11 +928,11 @@ function handleAiChat(optionVal = null) {
         <button class="chat-option-btn" data-val="monsoon">🌧️ Monsoon</button>
         <button class="chat-option-btn" data-val="warm">☀️ Warm</button>
       </div>`;
-    } 
+    }
     else if (aiChatState.step === 'collect_climate') {
       const climate = q.includes('monsoon') || q.includes('rain') ? 'monsoon' : 'warm';
       aiChatState.climate = climate;
-      
+
       if (userContactInfo) {
         aiChatState.step = 'complete';
         const itineraryHtml = getCustomItinerary(aiChatState.days, aiChatState.landscape, aiChatState.climate);
@@ -936,10 +955,10 @@ function handleAiChat(optionVal = null) {
           <button id="chat-collect-submit" class="btn btn-primary" style="padding:0.5rem; font-size:0.85rem; justify-content:center; border-radius:8px;">Submit Details</button>
         </div>`;
       }
-    } 
+    }
     else if (aiChatState.step === 'collect_contact') {
       responseText = `Please fill out and submit the contact details form above so we can finalize your custom itinerary.`;
-    } 
+    }
     else {
       // Reset chatbot state and start again
       aiChatState = { step: 'collect_days', days: 5, landscape: null, climate: null };
@@ -951,10 +970,10 @@ function handleAiChat(optionVal = null) {
         <button class="chat-option-btn" data-val="7">7 Days</button>
       </div>`;
     }
-    
+
     loadBubble.innerHTML = responseText;
     chatHistory.scrollTop = chatHistory.scrollHeight;
-    
+
     // Attach form submit listener if rendered
     const submitBtn = document.getElementById('chat-collect-submit');
     if (submitBtn) {
@@ -962,24 +981,24 @@ function handleAiChat(optionVal = null) {
         const nameVal = document.getElementById('chat-collect-name').value.trim();
         const emailVal = document.getElementById('chat-collect-email').value.trim();
         const phoneVal = document.getElementById('chat-collect-phone').value.trim();
-        
+
         if (!nameVal || !emailVal || !phoneVal) {
           showToast('Please fill out all contact fields!');
           return;
         }
-        
+
         userContactInfo = { name: nameVal, email: emailVal, phone: phoneVal };
         localStorage.setItem('nealvacation_contact_info', JSON.stringify(userContactInfo));
-        
+
         confetti({
           particleCount: 80,
           spread: 50,
           colors: ['#00B4D8', '#FFD166']
         });
-        
+
         aiChatState.step = 'complete';
         const itineraryHtml = getCustomItinerary(aiChatState.days, aiChatState.landscape, aiChatState.climate);
-        
+
         const formContainer = submitBtn.closest('.chat-collect-form');
         if (formContainer) {
           formContainer.innerHTML = `<div style="color:var(--primary-cyan); font-weight:700; margin-top:0.5rem; margin-bottom: 0.8rem;">
@@ -990,11 +1009,11 @@ function handleAiChat(optionVal = null) {
           ${itineraryHtml}
           <p style="margin-top:1rem; font-weight:600; color: var(--text-main);">Our luxury travel manager will call you within 15 minutes at ${phoneVal}. Thank you!</p>`;
         }
-        
+
         showToast('Contact Info Saved!', true);
       });
     }
-    
+
     if (window.lucide) window.lucide.createIcons();
   }, 1200);
 }
@@ -1004,26 +1023,60 @@ function handleLiveChat() {
   const input = document.getElementById('live-chat-input');
   const chatBody = document.getElementById('live-chat-body');
   if (!input || !chatBody || !input.value.trim()) return;
-  
+
   const text = input.value.trim();
   input.value = '';
-  
+
   const userBubble = document.createElement('div');
   userBubble.className = 'chat-message user';
   userBubble.innerText = text;
   chatBody.appendChild(userBubble);
   chatBody.scrollTop = chatBody.scrollHeight;
-  
+
   const loadBubble = document.createElement('div');
   loadBubble.className = 'chat-message bot';
   loadBubble.innerHTML = 'Connecting to representative...';
   chatBody.appendChild(loadBubble);
   chatBody.scrollTop = chatBody.scrollHeight;
-  
+
+  const savedContact = JSON.parse(localStorage.getItem('nealvacation_contact_info') || 'null');
+
   setTimeout(() => {
-    loadBubble.innerHTML = 'Hello! I am Mark from NealVacation Customer Care. I see you are inquiring about our luxury packages. Please share your phone number so I can assign a personal advisor.';
+    if (liveChatState.waitingForPhone) {
+      // Look for digits (at least 5) to see if user input looks like a phone number
+      const cleanText = text.replace(/[^0-9+]/g, '');
+      if (cleanText.length >= 5) {
+        const contactInfo = savedContact ? { ...savedContact, phone: text.trim() } : { name: 'Chat Client', phone: text.trim() };
+        localStorage.setItem('nealvacation_contact_info', JSON.stringify(contactInfo));
+        userContactInfo = contactInfo; // Sync global state
+
+        saveLeadToDb({
+          type: 'Live Chat',
+          name: contactInfo.name || 'Chat Client',
+          phone: text.trim(),
+          timestamp: new Date().toLocaleTimeString() + ' ' + new Date().toLocaleDateString(),
+          details: 'Captured via Live Chat support'
+        });
+
+        confetti({
+          particleCount: 50,
+          spread: 40,
+          colors: ['#00B4D8', '#FFD166']
+        });
+
+        loadBubble.innerHTML = `Thank you! I have saved your number (${text.trim()}) to our database. A personal luxury concierge advisor has been assigned and will call you within 15 minutes.`;
+        liveChatState.waitingForPhone = false;
+      } else {
+        loadBubble.innerHTML = `I didn't quite catch that. Please provide a valid contact number (digits only, e.g. +91 9119696600) so we can register it in our database and assign a personal advisor.`;
+      }
+    } else if (savedContact && savedContact.phone) {
+      loadBubble.innerHTML = `Hi! I see your registered number (${savedContact.phone}) is saved in our database. I have forwarded your request: "<em>${text}</em>" to our concierge team. They will address this when they call you shortly. Is there anything else you'd like to add?`;
+    } else {
+      loadBubble.innerHTML = `Hello! I am Mark from NealVacation Customer Care. I see you are inquiring about our luxury packages. Please share your phone number so I can save it to our database and assign a personal advisor.`;
+      liveChatState.waitingForPhone = true;
+    }
     chatBody.scrollTop = chatBody.scrollHeight;
-  }, 1500);
+  }, 1200);
 }
 
 // --- GSAP SCROLL TRIGGERS ---
@@ -1037,7 +1090,7 @@ function initScrollAnimations() {
     } else {
       nav.classList.remove('scrolled');
     }
-    
+
     if (window.scrollY > 600) {
       scrollBtn.classList.add('visible');
     } else {
@@ -1052,7 +1105,7 @@ function initScrollAnimations() {
       const val = parseFloat(counter.getAttribute('data-val'));
       const duration = 2.5;
       let start = 0;
-      
+
       const updateCounter = () => {
         start += val / (duration * 60);
         if (start >= val) {
@@ -1062,7 +1115,7 @@ function initScrollAnimations() {
           requestAnimationFrame(updateCounter);
         }
       };
-      
+
       // Basic Intersection Observer triggers once
       const observer = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting) {
@@ -1115,7 +1168,7 @@ function initListeners() {
       internationalBtn.classList.remove('active');
       renderDestinations();
     });
-    
+
     internationalBtn.addEventListener('click', () => {
       if (activeDestinationTab === 'international') return;
       activeDestinationTab = 'international';
@@ -1131,7 +1184,7 @@ function initListeners() {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      
+
       const filter = btn.getAttribute('data-filter');
       document.querySelectorAll('.package-card').forEach(card => {
         if (filter === 'all' || card.getAttribute('data-category') === filter) {
@@ -1150,18 +1203,18 @@ function initListeners() {
       const dest = document.getElementById('search-dest').value.toLowerCase();
       const type = document.getElementById('search-type').value;
       const budget = document.getElementById('search-budget').value;
-      
+
       // Filter packages based on criteria
       document.querySelectorAll('.package-card').forEach(card => {
         const title = card.querySelector('.package-title').innerText.toLowerCase();
         const cat = card.getAttribute('data-category');
-        
+
         let matchDest = true;
         let matchType = true;
-        
+
         if (dest && !title.includes(dest)) matchDest = false;
         if (type && cat !== type) matchType = false;
-        
+
         if (matchDest && matchType) {
           card.style.display = 'flex';
           card.scrollIntoView({ behavior: 'smooth' });
@@ -1173,32 +1226,87 @@ function initListeners() {
     });
   }
 
-  // Inquiry Form Confetti Trigger
+  // Inquiry Form Confetti & FormSubmit Trigger
   const consultationForm = document.getElementById('consultation-form');
   if (consultationForm) {
     consultationForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      
-      // Save contact details to state and local storage
-      const name = document.getElementById('inquiry-name')?.value.trim();
+
+      const name = document.getElementById('inquiry-name')?.value.trim() || 'Anonymous';
       const phone = document.getElementById('inquiry-phone')?.value.trim();
-      if (name && phone) {
-        userContactInfo = { name, phone };
-        localStorage.setItem('nealvacation_contact_info', JSON.stringify(userContactInfo));
+      const destination = document.getElementById('inquiry-destination')?.value.trim() || 'Not Specified';
+      const date = document.getElementById('inquiry-date')?.value.trim() || 'Not Specified';
+      const travelers = document.getElementById('inquiry-travelers')?.value || '2';
+      const budget = document.getElementById('inquiry-budget')?.value || 'Not Specified';
+      const message = document.getElementById('inquiry-message')?.value.trim() || 'None';
+
+      if (!phone) {
+        showToast('Please provide a valid phone number!');
+        return;
       }
-      
-      confetti({
-        particleCount: 150,
-        spread: 80,
-        origin: { y: 0.6 },
-        colors: ['#0A2342', '#0F4C81', '#00B4D8', '#FFD166']
+
+      // Save contact details to state and local storage
+      userContactInfo = { name, phone };
+      localStorage.setItem('nealvacation_contact_info', JSON.stringify(userContactInfo));
+
+      // Save to Leads Database
+      saveLeadToDb({
+        type: 'Inquiry Form',
+        name: name,
+        phone: phone,
+        timestamp: new Date().toLocaleTimeString() + ' ' + new Date().toLocaleDateString(),
+        details: `${destination} (${travelers} pax, ${budget} budget)`
       });
-      
-      showToast('Bespoke Consultation Booked! Confetti Sent.', true);
-      consultationForm.reset();
+
+      showToast('Sending inquiry to concierge...', true);
+
+      // Submit via FormSubmit AJAX API
+      fetch('https://formsubmit.co/ajax/nealvacation0@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          Name: name,
+          Phone: phone,
+          Destination: destination,
+          Travel_Date: date,
+          Travelers: travelers,
+          Budget: budget,
+          Message: message,
+          _subject: `New Luxury Inquiry from ${name}`
+        })
+      })
+        .then(response => {
+          if (!response.ok) throw new Error('Network response was not ok');
+          return response.json();
+        })
+        .then(data => {
+          confetti({
+            particleCount: 150,
+            spread: 80,
+            origin: { y: 0.6 },
+            colors: ['#0A2342', '#0F4C81', '#00B4D8', '#FFD166']
+          });
+          showToast('Bespoke Consultation Sent! Confetti Sent.', true);
+          consultationForm.reset();
+        })
+        .catch(error => {
+          console.error('Error submitting form:', error);
+          // Fallback: still trigger confetti & success state because we saved to local database!
+          confetti({
+            particleCount: 100,
+            spread: 60,
+            origin: { y: 0.6 },
+            colors: ['#0A2342', '#FFD166']
+          });
+          showToast('Bespoke Consultation Saved (Offline mode)!', true);
+          consultationForm.reset();
+        });
     });
   }
-  
+
   // Newsletter Confetti
   const newsForm = document.getElementById('newsletter-form-submit');
   if (newsForm) {
@@ -1227,7 +1335,7 @@ function initListeners() {
   const aiToggle = document.getElementById('ai-planner-toggle-btn');
   const aiPanel = document.getElementById('ai-planner-window');
   const aiClose = document.getElementById('ai-planner-close-btn');
-  
+
   if (aiToggle && aiPanel && aiClose) {
     aiToggle.addEventListener('click', () => {
       aiPanel.classList.toggle('open');
@@ -1236,7 +1344,7 @@ function initListeners() {
       aiPanel.classList.remove('open');
     });
   }
-  
+
   // AI Send Actions
   const aiSend = document.getElementById('ai-chat-send-btn');
   const aiInput = document.getElementById('ai-chat-input');
@@ -1253,7 +1361,7 @@ function initListeners() {
     aiChatHistory.addEventListener('click', (e) => {
       const btn = e.target.closest('.chat-option-btn');
       if (!btn) return;
-      
+
       const val = btn.getAttribute('data-val');
       handleAiChat(val);
     });
@@ -1263,7 +1371,7 @@ function initListeners() {
   const chatToggle = document.getElementById('live-chat-toggle-btn');
   const chatPanel = document.getElementById('live-chat-window');
   const chatClose = document.getElementById('live-chat-close-btn');
-  
+
   if (chatToggle && chatPanel && chatClose) {
     chatToggle.addEventListener('click', () => {
       chatPanel.classList.toggle('open');
@@ -1272,7 +1380,7 @@ function initListeners() {
       chatPanel.classList.remove('open');
     });
   }
-  
+
   // Live Chat Send Action
   const chatSend = document.getElementById('live-chat-send-btn');
   const chatInput = document.getElementById('live-chat-input');
@@ -1283,30 +1391,7 @@ function initListeners() {
     });
   }
 
-  // User Login Modal Toggle
-  const loginOpen = document.getElementById('login-open-btn');
-  const loginModal = document.getElementById('login-modal');
-  const loginClose = document.getElementById('login-close-btn');
-  
-  if (loginOpen && loginModal && loginClose) {
-    loginOpen.addEventListener('click', () => {
-      loginModal.classList.add('open');
-    });
-    loginClose.addEventListener('click', () => {
-      loginModal.classList.remove('open');
-    });
-  }
-  
-  // Login Form Submission
-  const loginForm = document.getElementById('login-form-submit');
-  if (loginForm) {
-    loginForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      showToast('Logged In Successfully!', true);
-      loginModal.classList.remove('open');
-      loginForm.reset();
-    });
-  }
+
 
   // Lightbox Close
   const lightboxClose = document.getElementById('lightbox-close-btn');
@@ -1322,20 +1407,20 @@ function initListeners() {
   const compareClear = document.getElementById('compare-clear-btn');
   const compareModal = document.getElementById('compare-modal');
   const compareModalClose = document.getElementById('compare-modal-close-btn');
-  
+
   if (compareSubmit && compareModal) {
     compareSubmit.addEventListener('click', () => {
       buildComparisonTable();
       compareModal.classList.add('open');
     });
   }
-  
+
   if (compareModalClose) {
     compareModalClose.addEventListener('click', () => {
       compareModal.classList.remove('open');
     });
   }
-  
+
   if (compareClear) {
     compareClear.addEventListener('click', () => {
       selectedComparePackages = [];
@@ -1357,7 +1442,7 @@ function initListeners() {
   const waBtn = document.getElementById('whatsapp-booking-btn');
   if (waBtn) {
     waBtn.addEventListener('click', () => {
-      window.open('https://wa.me/917300000000?text=Hi%20NealVacation!%20I%20am%20interested%20in%20a%20luxury%20holiday%20tour%20consultation.', '_blank');
+      window.open('https://wa.me/919119696600?text=Hi%20NealVacation!%20I%20am%20interested%20in%20a%20luxury%20holiday%20tour%20consultation.', '_blank');
     });
   }
 }
@@ -1367,13 +1452,13 @@ function buildComparisonTable() {
   const headRow = document.getElementById('compare-table-head');
   const tbody = document.getElementById('compare-table-body');
   if (!headRow || !tbody) return;
-  
+
   // Header Row
   headRow.innerHTML = '<th>Features</th>';
   selectedComparePackages.forEach(pkg => {
     headRow.innerHTML += `<th>${pkg.name}</th>`;
   });
-  
+
   // Table features details
   const features = [
     { label: 'Price', key: 'price', format: (val) => `$${val}` },
@@ -1383,7 +1468,7 @@ function buildComparisonTable() {
     { label: 'Visa Support', key: 'visa' },
     { label: 'Highlights', key: 'highlights', format: (val) => val.join(', ') }
   ];
-  
+
   tbody.innerHTML = '';
   features.forEach(feat => {
     let row = `<tr><td><strong>${feat.label}</strong></td>`;
@@ -1401,7 +1486,7 @@ function buildComparisonTable() {
 function showToast(message, isSuccess = false) {
   const existing = document.getElementById('toast-notification');
   if (existing) existing.remove();
-  
+
   const toast = document.createElement('div');
   toast.id = 'toast-notification';
   toast.style.position = 'fixed';
@@ -1421,19 +1506,19 @@ function showToast(message, isSuccess = false) {
   toast.style.alignItems = 'center';
   toast.style.gap = '0.5rem';
   toast.style.transition = 'transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-  
-  toast.innerHTML = isSuccess 
+
+  toast.innerHTML = isSuccess
     ? `<i data-lucide="check-circle" style="color:var(--accent-gold); width:18px;"></i> ${message}`
     : `<i data-lucide="alert-circle" style="width:18px;"></i> ${message}`;
-  
+
   document.body.appendChild(toast);
   if (window.lucide) window.lucide.createIcons();
-  
+
   // Animate in
   setTimeout(() => {
     toast.style.transform = 'translateX(-50%) translateY(0)';
   }, 50);
-  
+
   // Clear after 3.5s
   setTimeout(() => {
     toast.style.transform = 'translateX(-50%) translateY(100px)';
