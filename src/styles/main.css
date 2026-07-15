@@ -110,7 +110,7 @@ body {
 }
 
 .glass-panel {
-  background: var(--glass-bg);
+  background: rgb(4 4 4 / 65%);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid var(--glass-border);
