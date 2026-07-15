@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NealVacation | Form Activation Helper</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #F4F7FA;
+      color: #0A2342;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: white;
+      padding: 3rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(10, 35, 66, 0.08);
+      max-width: 450px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #0F4C81;
+    }
+    p {
+      line-height: 1.6;
+      color: #5C6E84;
+      margin-bottom: 2rem;
+    }
+    button {
+      padding: 0.9rem 2rem;
+      background: linear-gradient(135deg, #0F4C81 0%, #00B4D8 100%);
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0, 180, 216, 0.3);
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 180, 216, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Email Form Activation</h2>
+    <p>FormSubmit requires a standard HTML Form submit redirect to send the initial verification email. Click the button below to submit a test form and trigger the activation email to <strong>nealvacation0@gmail.com</strong>.</p>
+    
+    <form action="https://formsubmit.co/nealvacation0@gmail.com" method="POST">
+      <input type="hidden" name="message" value="Initial verification request from NealVacation local server.">
+      <button type="submit">Send Activation Email</button>
+    </form>
+  </div>
+</body>
+</html>

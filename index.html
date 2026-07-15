@@ -50,6 +50,12 @@
       </ul>
       
       <div class="nav-actions">
+        <select id="global-currency-select" class="nav-currency-select" aria-label="Select Currency">
+          <option value="INR">₹ INR</option>
+          <option value="USD">$ USD</option>
+          <option value="EUR">€ EUR</option>
+          <option value="AED">د.إ AED</option>
+        </select>
         <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle dark mode">
           <i data-lucide="moon"></i>
         </button>
@@ -352,13 +358,40 @@
               </div>
             </div>
           </div>
+
+          <div class="contact-details-box" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; flex-wrap: wrap; gap: 2rem;">
+            <div class="contact-detail-item" style="display: flex; align-items: center; gap: 0.8rem;">
+              <div style="background: rgba(255,209,102,0.1); padding: 0.6rem; border-radius: 50%; color: var(--accent-gold); display: flex; align-items: center; justify-content: center;">
+                <i data-lucide="mail" style="width: 20px; height: 20px;"></i>
+              </div>
+              <div>
+                <span style="display: block; font-size: 0.8rem; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px;">Email Us</span>
+                <a href="mailto:nealvacation0@gmail.com" style="color: #FFFFFF; font-family: var(--font-outfit); font-weight: 700; text-decoration: none;">nealvacation0@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-detail-item" style="display: flex; align-items: center; gap: 0.8rem;">
+              <div style="background: rgba(0,180,216,0.1); padding: 0.6rem; border-radius: 50%; color: var(--primary-cyan); display: flex; align-items: center; justify-content: center;">
+                <i data-lucide="phone" style="width: 20px; height: 20px;"></i>
+              </div>
+              <div>
+                <span style="display: block; font-size: 0.8rem; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px;">Call & WhatsApp</span>
+                <a href="tel:+919119696600" style="color: #FFFFFF; font-family: var(--font-outfit); font-weight: 700; text-decoration: none;">+91 91196 96600</a>
+              </div>
+            </div>
+          </div>
         </div>
         
         <div class="inquiry-form-wrap glass-panel" id="inquiry-consultation-form">
           <form class="inquiry-form" id="consultation-form">
-            <div class="form-group">
-              <label for="inquiry-name">Your Full Name</label>
-              <input type="text" id="inquiry-name" placeholder="John Doe" required>
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="inquiry-name">Your Full Name</label>
+                <input type="text" id="inquiry-name" placeholder="John Doe" required>
+              </div>
+              <div class="form-group">
+                <label for="inquiry-email">Email Address</label>
+                <input type="email" id="inquiry-email" placeholder="john@example.com" required>
+              </div>
             </div>
             <div class="form-group-row">
               <div class="form-group">
@@ -384,8 +417,8 @@
               <label for="inquiry-budget">Estimated Budget</label>
               <select id="inquiry-budget" required>
                 <option value="unlimited">Luxury (No Limit)</option>
-                <option value="premium">Premium ($10k - $25k)</option>
-                <option value="standard">Standard ($5k - $10k)</option>
+                <option value="premium">Premium (₹8L - ₹20L)</option>
+                <option value="standard">Standard (₹4L - ₹8L)</option>
               </select>
             </div>
             <div class="form-group">

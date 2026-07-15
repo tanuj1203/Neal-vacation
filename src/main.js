@@ -2,22 +2,23 @@ import { gsap } from 'gsap';
 import confetti from 'canvas-confetti';
 
 // --- DATA SOURCE ---
+// --- DATA SOURCE ---
 const DESTINATIONS = {
   domestic: [
-    { id: 'goa', name: 'Goa', img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80', stays: '120+ Stays', reviews: '4.9 ★ (1.2k)', price: 'From $450/day' },
-    { id: 'kashmir', name: 'Kashmir', img: 'https://images.unsplash.com/photo-1566228015668-4c45dbc4e2f5?auto=format&fit=crop&w=600&q=80', stays: '45+ Stays', reviews: '4.8 ★ (850)', price: 'From $650/day' },
-    { id: 'kerala', name: 'Kerala', img: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=600&q=80', stays: '80+ Stays', reviews: '4.7 ★ (980)', price: 'From $500/day' },
-    { id: 'andaman', name: 'Andaman Islands', img: 'https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=600&q=80', stays: '35+ Stays', reviews: '4.9 ★ (420)', price: 'From $800/day' },
-    { id: 'rajasthan', name: 'Rajasthan', img: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=600&q=80', stays: '90+ Stays', reviews: '4.8 ★ (1.1k)', price: 'From $600/day' },
-    { id: 'ladakh', name: 'Leh Ladakh', img: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=600&q=80', stays: '25+ Stays', reviews: '4.9 ★ (640)', price: 'From $700/day' }
+    { id: 'goa', name: 'Goa', img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80', stays: '120+ Stays', reviews: '4.9 ★ (1.2k)', price: 37500 },
+    { id: 'kashmir', name: 'Kashmir', img: 'https://images.unsplash.com/photo-1566228015668-4c45dbc4e2f5?auto=format&fit=crop&w=600&q=80', stays: '45+ Stays', reviews: '4.8 ★ (850)', price: 54000 },
+    { id: 'kerala', name: 'Kerala', img: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=600&q=80', stays: '80+ Stays', reviews: '4.7 ★ (980)', price: 41500 },
+    { id: 'andaman', name: 'Andaman Islands', img: 'https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=600&q=80', stays: '35+ Stays', reviews: '4.9 ★ (420)', price: 66500 },
+    { id: 'rajasthan', name: 'Rajasthan', img: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=600&q=80', stays: '90+ Stays', reviews: '4.8 ★ (1.1k)', price: 50000 },
+    { id: 'ladakh', name: 'Leh Ladakh', img: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=600&q=80', stays: '25+ Stays', reviews: '4.9 ★ (640)', price: 58000 }
   ],
   international: [
-    { id: 'dubai', name: 'Dubai', img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80', stays: '250+ Stays', reviews: '4.9 ★ (2.3k)', price: 'From $1,200/day' },
-    { id: 'bali', name: 'Bali', img: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80', stays: '180+ Stays', reviews: '4.8 ★ (3.1k)', price: 'From $800/day' },
-    { id: 'thailand', name: 'Thailand', img: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=600&q=80', stays: '140+ Stays', reviews: '4.7 ★ (1.9k)', price: 'From $550/day' },
-    { id: 'singapore', name: 'Singapore', img: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=600&q=80', stays: '95+ Stays', reviews: '4.8 ★ (1.5k)', price: 'From $950/day' },
-    { id: 'maldives', name: 'Maldives', img: 'https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=600&q=80', stays: '60+ Stays', reviews: '5.0 ★ (4.2k)', price: 'From $2,500/day' },
-    { id: 'vietnam', name: 'Vietnam', img: 'https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=600&q=80', stays: '75+ Stays', reviews: '4.8 ★ (1.1k)', price: 'From $600/day' }
+    { id: 'dubai', name: 'Dubai', img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80', stays: '250+ Stays', reviews: '4.9 ★ (2.3k)', price: 100000 },
+    { id: 'bali', name: 'Bali', img: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80', stays: '180+ Stays', reviews: '4.8 ★ (3.1k)', price: 66500 },
+    { id: 'thailand', name: 'Thailand', img: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=600&q=80', stays: '140+ Stays', reviews: '4.7 ★ (1.9k)', price: 45000 },
+    { id: 'singapore', name: 'Singapore', img: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=600&q=80', stays: '95+ Stays', reviews: '4.8 ★ (1.5k)', price: 79000 },
+    { id: 'maldives', name: 'Maldives', img: 'https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=600&q=80', stays: '60+ Stays', reviews: '5.0 ★ (4.2k)', price: 200000 },
+    { id: 'vietnam', name: 'Vietnam', img: 'https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=600&q=80', stays: '75+ Stays', reviews: '4.8 ★ (1.1k)', price: 50000 }
   ]
 };
 
@@ -27,7 +28,7 @@ const PACKAGES = [
     name: 'Romantic Maldives Water Villa Escape',
     category: 'honeymoon',
     duration: '5 Days / 4 Nights',
-    price: 4500,
+    price: 375000,
     rating: '5.0',
     img: 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=600&q=80',
     highlights: ['Overwater Bungalow', 'Private Yacht Tour', 'Spa Retreat'],
@@ -39,7 +40,7 @@ const PACKAGES = [
     name: 'Royal Rajasthan Heritage Journey',
     category: 'family',
     duration: '7 Days / 6 Nights',
-    price: 2200,
+    price: 180000,
     rating: '4.8',
     img: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=600&q=80',
     highlights: ['Palace Stays', 'Chauffeur Driven', 'Desert Safari'],
@@ -51,7 +52,7 @@ const PACKAGES = [
     name: 'Leh Ladakh Motorcycle & Valley Adventure',
     category: 'adventure',
     duration: '8 Days / 7 Nights',
-    price: 1500,
+    price: 125000,
     rating: '4.9',
     img: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=600&q=80',
     highlights: ['Royal Enfield Rent', 'Oxygen Assist', 'Campings'],
@@ -63,7 +64,7 @@ const PACKAGES = [
     name: 'Elite Dubai Desert & Skyline Retreat',
     category: 'luxury',
     duration: '6 Days / 5 Nights',
-    price: 5500,
+    price: 450000,
     rating: '4.9',
     img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80',
     highlights: ['Helicopter Ride', 'VIP Burj Access', 'Michelin Diners'],
@@ -75,7 +76,7 @@ const PACKAGES = [
     name: 'Private Pool Villa Escape in Ubud',
     category: 'honeymoon',
     duration: '6 Days / 5 Nights',
-    price: 2800,
+    price: 230000,
     rating: '4.8',
     img: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80',
     highlights: ['Private Canopy Villa', 'Floating Breakfast', 'Tirta Holy Spring'],
@@ -87,7 +88,7 @@ const PACKAGES = [
     name: 'European Alps & French Riviera Incentive',
     category: 'corporate',
     duration: '10 Days / 9 Nights',
-    price: 8500,
+    price: 700000,
     rating: '4.9',
     img: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=600&q=80',
     highlights: ['Swiss Alpine Passes', 'Private Yacht Cruise', 'Charter Flights'],
@@ -99,7 +100,7 @@ const PACKAGES = [
     name: '3 Jyotirlinga in Maharashtra Tour',
     category: 'family',
     duration: '4 Days / 3 Nights',
-    price: 290,
+    price: 24000,
     rating: '4.8',
     img: 'https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=600&q=80',
     highlights: ['Trimbakeshwar', 'Bhimashankar', 'Grishneshwar'],
@@ -112,7 +113,7 @@ const PACKAGES = [
     name: 'Delhi Haridwar Rishikesh Tour',
     category: 'family',
     duration: '3 Days / 2 Nights',
-    price: 220,
+    price: 18000,
     rating: '4.7',
     img: 'https://images.unsplash.com/photo-1602643163983-ed0babc39797?auto=format&fit=crop&w=600&q=80',
     highlights: ['Ganga Aarti', 'Lakshman Jhula', 'Har Ki Pauri'],
@@ -125,7 +126,7 @@ const PACKAGES = [
     name: 'Goa Beach Vacation Tour',
     category: 'honeymoon',
     duration: '4 Days / 3 Nights',
-    price: 350,
+    price: 29000,
     rating: '4.9',
     img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80',
     highlights: ['North Goa Beaches', 'South Goa Churches', 'Mandovi River Cruise'],
@@ -138,7 +139,7 @@ const PACKAGES = [
     name: 'Guwahati Kamakhya Shaktipeeth Tour',
     category: 'family',
     duration: '3 Days / 2 Nights',
-    price: 250,
+    price: 20000,
     rating: '4.8',
     img: 'https://images.unsplash.com/photo-1620075267033-09d12ec75b40?auto=format&fit=crop&w=600&q=80',
     highlights: ['Kamakhya Temple', 'Brahmaputra Cruise', 'Umananda Temple'],
@@ -151,7 +152,7 @@ const PACKAGES = [
     name: 'Haridwar Rishikesh Spiritual Experience',
     category: 'family',
     duration: '4 Days / 3 Nights',
-    price: 280,
+    price: 23000,
     rating: '4.8',
     img: 'https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=600&q=80',
     highlights: ['Neelkanth Temple', 'Yoga & Meditation', 'Rishikesh Rafting'],
@@ -164,7 +165,7 @@ const PACKAGES = [
     name: 'Golden City Jaisalmer Desert Tour',
     category: 'adventure',
     duration: '3 Days / 2 Nights',
-    price: 290,
+    price: 24000,
     rating: '4.9',
     img: 'https://images.unsplash.com/photo-1602643163983-ed0babc39797?auto=format&fit=crop&w=600&q=80',
     highlights: ['Sam Sand Dunes', 'Desert Camping', 'Camel Safari'],
@@ -177,7 +178,7 @@ const PACKAGES = [
     name: 'Kerala Hills & Backwaters Tour',
     category: 'honeymoon',
     duration: '6 Days / 5 Nights',
-    price: 590,
+    price: 49000,
     rating: '4.9',
     img: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=600&q=80',
     highlights: ['Munnar Tea Gardens', 'Alleppey Houseboat', 'Kochi Fort'],
@@ -190,7 +191,7 @@ const PACKAGES = [
     name: 'Maihar Chitrakoot Heritage Pilgrimage',
     category: 'family',
     duration: '3 Days / 2 Nights',
-    price: 210,
+    price: 17000,
     rating: '4.7',
     img: 'https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=600&q=80',
     highlights: ['Sharda Devi Temple', 'Gupt Godavari', 'Ramghat Aarti'],
@@ -203,7 +204,7 @@ const PACKAGES = [
     name: 'Scenic Manali Solang Valley Tour',
     category: 'adventure',
     duration: '6 Days / 5 Nights',
-    price: 390,
+    price: 32000,
     rating: '4.8',
     img: 'https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=600&q=80',
     highlights: ['Solang Valley Sports', 'Rohtang Pass Snow', 'Hadimba Temple'],
@@ -216,7 +217,7 @@ const PACKAGES = [
     name: 'Kathmandu Sacred Temple Deluxe Tour',
     category: 'luxury',
     duration: '4 Days / 3 Nights',
-    price: 490,
+    price: 40000,
     rating: '4.8',
     img: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80',
     highlights: ['Pashupatinath Temple', 'Boudhanath Stupa', 'Durbar Square'],
@@ -229,7 +230,7 @@ const PACKAGES = [
     name: 'Holy Ganges & Ayodhya Spiritual Yatra',
     category: 'family',
     duration: '7 Days / 6 Nights',
-    price: 650,
+    price: 54000,
     rating: '4.9',
     img: 'https://images.unsplash.com/photo-1561361058-c24cecae35ca?auto=format&fit=crop&w=600&q=80',
     highlights: ['Kashi Vishwanath', 'Ayodhya Ram Mandir', 'Triveni Sangam'],
@@ -286,6 +287,29 @@ let aiChatState = {
 let liveChatState = {
   waitingForPhone: false
 };
+
+// Currency State & Conversions
+let currentCurrency = localStorage.getItem('nealvacation_currency') || 'INR';
+
+const EXCHANGE_RATES_BASE_INR = {
+  INR: 1,
+  USD: 0.012,
+  EUR: 0.011,
+  AED: 0.044
+};
+
+const CURRENCY_SYMBOLS = {
+  INR: '₹',
+  USD: '$',
+  EUR: '€',
+  AED: 'د.إ '
+};
+
+function formatPrice(priceInINR, currency) {
+  const rate = EXCHANGE_RATES_BASE_INR[currency] || 1;
+  const converted = Math.round(priceInINR * rate);
+  return `${CURRENCY_SYMBOLS[currency] || ''}${converted.toLocaleString()}`;
+}
 
 // --- INIT APP ---
 window.addEventListener('DOMContentLoaded', () => {
@@ -385,7 +409,7 @@ function renderDestinations() {
           <span><i data-lucide="star" style="width:14px; fill:var(--accent-gold); color:var(--accent-gold);"></i> ${dest.reviews}</span>
         </div>
         <div class="dest-details">
-          <span style="font-weight: 700; color: var(--accent-gold);">${dest.price}</span>
+          <span style="font-weight: 700; color: var(--accent-gold);">From ${formatPrice(dest.price, currentCurrency)}/day</span>
         </div>
         <button class="btn btn-primary dest-book-btn" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">
           <i data-lucide="calendar"></i> Book Now
@@ -431,7 +455,7 @@ function renderPackages() {
         <div class="package-footer">
           <div class="package-price">
             <span class="price-label">Per Traveler</span>
-            <span class="price-val">$${pkg.price}</span>
+            <span class="price-val">${formatPrice(pkg.price, currentCurrency)}</span>
           </div>
           <div style="display: flex; gap: 0.4rem; align-items: center;">
             ${pkg.pdf ? `<a href="${pkg.pdf}" target="_blank" class="btn btn-outline" style="padding: 0.6rem 1rem; font-size: 0.85rem;" title="Download PDF Brochure"><i data-lucide="file-text"></i> PDF</a>` : ''}
@@ -990,6 +1014,35 @@ function handleAiChat(optionVal = null) {
         userContactInfo = { name: nameVal, email: emailVal, phone: phoneVal };
         localStorage.setItem('nealvacation_contact_info', JSON.stringify(userContactInfo));
 
+        // Save to Leads Database
+        saveLeadToDb({
+          type: 'AI Planner Lead',
+          name: nameVal,
+          email: emailVal,
+          phone: phoneVal,
+          timestamp: new Date().toLocaleTimeString() + ' ' + new Date().toLocaleDateString(),
+          details: `Custom Itinerary: ${aiChatState.days} Days, ${aiChatState.landscape}, ${aiChatState.climate}`
+        });
+
+        // Submit via FormSubmit AJAX API
+        fetch('https://formsubmit.co/ajax/nealvacation0@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            Type: 'AI Planner Lead',
+            Name: nameVal,
+            Email: emailVal,
+            Phone: phoneVal,
+            Itinerary_Days: aiChatState.days,
+            Landscape: aiChatState.landscape,
+            Climate: aiChatState.climate,
+            _subject: `New AI Planner Lead from ${nameVal}`
+          })
+        }).catch(err => console.error('FormSubmit error:', err));
+
         confetti({
           particleCount: 80,
           spread: 50,
@@ -1148,6 +1201,19 @@ function initListeners() {
     });
   }
 
+  // Global Currency Switcher
+  const currencySelect = document.getElementById('global-currency-select');
+  if (currencySelect) {
+    currencySelect.value = currentCurrency;
+    currencySelect.addEventListener('change', (e) => {
+      currentCurrency = e.target.value;
+      localStorage.setItem('nealvacation_currency', currentCurrency);
+      renderPackages();
+      renderDestinations();
+      showToast(`Currency switched to ${currentCurrency}`, true);
+    });
+  }
+
   // Theme Toggler
   const themeToggleBtn = document.getElementById('theme-toggle-btn');
   if (themeToggleBtn) {
@@ -1233,6 +1299,7 @@ function initListeners() {
       e.preventDefault();
 
       const name = document.getElementById('inquiry-name')?.value.trim() || 'Anonymous';
+      const email = document.getElementById('inquiry-email')?.value.trim();
       const phone = document.getElementById('inquiry-phone')?.value.trim();
       const destination = document.getElementById('inquiry-destination')?.value.trim() || 'Not Specified';
       const date = document.getElementById('inquiry-date')?.value.trim() || 'Not Specified';
@@ -1240,22 +1307,23 @@ function initListeners() {
       const budget = document.getElementById('inquiry-budget')?.value || 'Not Specified';
       const message = document.getElementById('inquiry-message')?.value.trim() || 'None';
 
-      if (!phone) {
-        showToast('Please provide a valid phone number!');
+      if (!phone || !email) {
+        showToast('Please fill out all required contact fields!');
         return;
       }
 
       // Save contact details to state and local storage
-      userContactInfo = { name, phone };
+      userContactInfo = { name, email, phone };
       localStorage.setItem('nealvacation_contact_info', JSON.stringify(userContactInfo));
 
       // Save to Leads Database
       saveLeadToDb({
         type: 'Inquiry Form',
         name: name,
+        email: email,
         phone: phone,
         timestamp: new Date().toLocaleTimeString() + ' ' + new Date().toLocaleDateString(),
-        details: `${destination} (${travelers} pax, ${budget} budget)`
+        details: `Destination: ${destination} (${travelers} pax, ${budget} budget)`
       });
 
       showToast('Sending inquiry to concierge...', true);
@@ -1269,6 +1337,7 @@ function initListeners() {
         },
         body: JSON.stringify({
           Name: name,
+          Email: email,
           Phone: phone,
           Destination: destination,
           Travel_Date: date,
@@ -1283,6 +1352,10 @@ function initListeners() {
           return response.json();
         })
         .then(data => {
+          if (data && (data.success === 'false' || data.success === false || (data.message && data.message.toLowerCase().includes('activate')))) {
+            showToast('Activation required! Check nealvacation0@gmail.com inbox & spam.', false);
+            return;
+          }
           confetti({
             particleCount: 150,
             spread: 80,
@@ -1461,7 +1534,7 @@ function buildComparisonTable() {
 
   // Table features details
   const features = [
-    { label: 'Price', key: 'price', format: (val) => `$${val}` },
+    { label: 'Price', key: 'price', format: (val) => formatPrice(val, currentCurrency) },
     { label: 'Duration', key: 'duration' },
     { label: 'Rating', key: 'rating', format: (val) => `${val} ★` },
     { label: 'Accommodation', key: 'accommodation' },

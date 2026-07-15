@@ -336,6 +336,31 @@ header.scrolled {
   gap: 1.5rem;
 }
 
+/* Currency Select Dropdown in Header */
+.nav-currency-select {
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: var(--glass-bg);
+  color: var(--text-main);
+  font-family: var(--font-outfit);
+  font-weight: 600;
+  font-size: 0.85rem;
+  outline: none;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.nav-currency-select:hover {
+  border-color: var(--primary-cyan);
+  background: var(--card-bg);
+}
+
+.nav-currency-select option {
+  background: var(--card-bg);
+  color: var(--text-main);
+}
+
 /* Theme Toggle Button */
 .theme-toggle {
   background: transparent;
@@ -1440,6 +1465,11 @@ section {
   outline: none;
 }
 
+select option {
+  background-color: var(--card-bg);
+  color: var(--text-main);
+}
+
 .form-group input::placeholder, .form-group textarea::placeholder {
   color: var(--text-muted);
   opacity: 0.8;
@@ -1457,6 +1487,12 @@ section {
 .inquiry-form .form-group textarea {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  color-scheme: dark;
+}
+
+.inquiry-form .form-group select option {
+  background-color: #0A2342;
   color: #FFFFFF;
 }
 
