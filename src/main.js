@@ -102,7 +102,7 @@ const PACKAGES = [
     duration: '4 Days / 3 Nights',
     price: 24000,
     rating: '4.8',
-    img: 'https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=600&q=80',
+    img: 'https://images.unsplash.com/photo-1719465236914-71562b2c59dd?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     highlights: ['Trimbakeshwar', 'Bhimashankar', 'Grishneshwar'],
     visa: 'Not Required',
     accommodation: 'Premium 3★ Hotels',
@@ -115,7 +115,7 @@ const PACKAGES = [
     duration: '3 Days / 2 Nights',
     price: 18000,
     rating: '4.7',
-    img: 'https://images.unsplash.com/photo-1602643163983-ed0babc39797?auto=format&fit=crop&w=600&q=80',
+    img: 'https://images.unsplash.com/photo-1712510817140-917938f92e5b?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     highlights: ['Ganga Aarti', 'Lakshman Jhula', 'Har Ki Pauri'],
     visa: 'Not Required',
     accommodation: 'Deluxe Cozy Hotels',
@@ -193,7 +193,7 @@ const PACKAGES = [
     duration: '3 Days / 2 Nights',
     price: 17000,
     rating: '4.7',
-    img: 'https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=600&q=80',
+    img: 'https://plus.unsplash.com/premium_photo-1697730398251-40cd8dc57e0b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     highlights: ['Sharda Devi Temple', 'Gupt Godavari', 'Ramghat Aarti'],
     visa: 'Not Required',
     accommodation: 'Comfort Cozy Hotel',
@@ -206,7 +206,7 @@ const PACKAGES = [
     duration: '6 Days / 5 Nights',
     price: 32000,
     rating: '4.8',
-    img: 'https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=600&q=80',
+    img: 'https://images.unsplash.com/photo-1713063968789-adf139c4a1eb?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     highlights: ['Solang Valley Sports', 'Rohtang Pass Snow', 'Hadimba Temple'],
     visa: 'Not Required',
     accommodation: 'Himalayan View Resort',
@@ -1071,7 +1071,7 @@ function handleAiChat(optionVal = null) {
   }, 1200);
 }
 
-// --- LIVE CHAT CUSTOMER ENGINE ---
+// --- WHATSAPP INBOX CUSTOMER ENGINE ---
 function handleLiveChat() {
   const input = document.getElementById('live-chat-input');
   const chatBody = document.getElementById('live-chat-body');
@@ -1080,56 +1080,62 @@ function handleLiveChat() {
   const text = input.value.trim();
   input.value = '';
 
+  // Append user message bubble styled like a green WhatsApp bubble
   const userBubble = document.createElement('div');
   userBubble.className = 'chat-message user';
+  userBubble.style.background = '#DCF8C6';
+  userBubble.style.color = '#111111';
+  userBubble.style.alignSelf = 'flex-end';
+  userBubble.style.borderRadius = '8px';
+  userBubble.style.borderTopRightRadius = '0';
+  userBubble.style.padding = '0.8rem';
+  userBubble.style.fontSize = '0.85rem';
+  userBubble.style.maxWidth = '85%';
+  userBubble.style.boxShadow = '0 1px 0.5px rgba(0,0,0,0.13)';
+  userBubble.style.lineHeight = '1.4';
   userBubble.innerText = text;
   chatBody.appendChild(userBubble);
   chatBody.scrollTop = chatBody.scrollHeight;
 
+  // Render a brief simulated WhatsApp helper response
   const loadBubble = document.createElement('div');
   loadBubble.className = 'chat-message bot';
-  loadBubble.innerHTML = 'Connecting to representative...';
-  chatBody.appendChild(loadBubble);
-  chatBody.scrollTop = chatBody.scrollHeight;
+  loadBubble.style.background = '#FFFFFF';
+  loadBubble.style.color = '#111111';
+  loadBubble.style.alignSelf = 'flex-start';
+  loadBubble.style.borderRadius = '8px';
+  loadBubble.style.borderTopLeftRadius = '0';
+  loadBubble.style.padding = '0.8rem';
+  loadBubble.style.fontSize = '0.85rem';
+  loadBubble.style.maxWidth = '85%';
+  loadBubble.style.boxShadow = '0 1px 0.5px rgba(0,0,0,0.13)';
+  loadBubble.style.lineHeight = '1.4';
+  loadBubble.innerHTML = '<em>Redirecting you to our WhatsApp chat...</em>';
+  
+  setTimeout(() => {
+    chatBody.appendChild(loadBubble);
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }, 300);
 
+  // Retrieve contact info if previously saved
   const savedContact = JSON.parse(localStorage.getItem('nealvacation_contact_info') || 'null');
 
+  // Save the lead to backend database (preserves system integrity/analytics)
+  if (typeof saveLeadToDb === 'function') {
+    saveLeadToDb({
+      type: 'WhatsApp Chat',
+      name: savedContact ? (savedContact.name || 'WhatsApp Client') : 'WhatsApp Client',
+      phone: savedContact ? (savedContact.phone || '') : '',
+      timestamp: new Date().toLocaleTimeString() + ' ' + new Date().toLocaleDateString(),
+      details: `Initiated WhatsApp chat with message: "${text}"`
+    });
+  }
+
+  // Open WhatsApp in a new tab with the pre-filled message
   setTimeout(() => {
-    if (liveChatState.waitingForPhone) {
-      // Look for digits (at least 5) to see if user input looks like a phone number
-      const cleanText = text.replace(/[^0-9+]/g, '');
-      if (cleanText.length >= 5) {
-        const contactInfo = savedContact ? { ...savedContact, phone: text.trim() } : { name: 'Chat Client', phone: text.trim() };
-        localStorage.setItem('nealvacation_contact_info', JSON.stringify(contactInfo));
-        userContactInfo = contactInfo; // Sync global state
-
-        saveLeadToDb({
-          type: 'Live Chat',
-          name: contactInfo.name || 'Chat Client',
-          phone: text.trim(),
-          timestamp: new Date().toLocaleTimeString() + ' ' + new Date().toLocaleDateString(),
-          details: 'Captured via Live Chat support'
-        });
-
-        confetti({
-          particleCount: 50,
-          spread: 40,
-          colors: ['#00B4D8', '#FFD166']
-        });
-
-        loadBubble.innerHTML = `Thank you! I have saved your number (${text.trim()}) to our database. A personal luxury concierge advisor has been assigned and will call you within 15 minutes.`;
-        liveChatState.waitingForPhone = false;
-      } else {
-        loadBubble.innerHTML = `I didn't quite catch that. Please provide a valid contact number (digits only, e.g. +91 9119696600) so we can register it in our database and assign a personal advisor.`;
-      }
-    } else if (savedContact && savedContact.phone) {
-      loadBubble.innerHTML = `Hi! I see your registered number (${savedContact.phone}) is saved in our database. I have forwarded your request: "<em>${text}</em>" to our concierge team. They will address this when they call you shortly. Is there anything else you'd like to add?`;
-    } else {
-      loadBubble.innerHTML = `Hello! I am Mark from NealVacation Customer Care. I see you are inquiring about our luxury packages. Please share your phone number so I can save it to our database and assign a personal advisor.`;
-      liveChatState.waitingForPhone = true;
-    }
-    chatBody.scrollTop = chatBody.scrollHeight;
-  }, 1200);
+    const encodedText = encodeURIComponent(text);
+    window.open(`https://wa.me/919119696600?text=${encodedText}`, '_blank');
+  }, 800);
 }
 
 // --- GSAP SCROLL TRIGGERS ---
@@ -1440,8 +1446,8 @@ function initListeners() {
     });
   }
 
-  // Live Chat Panel Toggle
-  const chatToggle = document.getElementById('live-chat-toggle-btn');
+  // Live Chat Panel Toggle (now wired to WhatsApp booking button)
+  const chatToggle = document.getElementById('whatsapp-booking-btn');
   const chatPanel = document.getElementById('live-chat-window');
   const chatClose = document.getElementById('live-chat-close-btn');
 
@@ -1511,13 +1517,7 @@ function initListeners() {
     });
   }
 
-  // WhatsApp click handler
-  const waBtn = document.getElementById('whatsapp-booking-btn');
-  if (waBtn) {
-    waBtn.addEventListener('click', () => {
-      window.open('https://wa.me/919119696600?text=Hi%20NealVacation!%20I%20am%20interested%20in%20a%20luxury%20holiday%20tour%20consultation.', '_blank');
-    });
-  }
+
 }
 
 // --- COMPILE COMPARISON TABLE ---
