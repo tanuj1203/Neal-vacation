@@ -7,7 +7,7 @@
   <!-- SEO Optimization -->
   <title>NealVacation | Luxury Stays & Bespoke Travel Experiences</title>
   <meta name="description" content="Explore the world with NealVacation. Offering customized luxury tours, international stays, visa assistance, and flight bookings for the ultimate premium travel experience.">
-  <meta name="keywords" content="luxury travel, custom vacations, honeymoon tours, international travel, corporate tours, premium hotel bookings, NealVacation">
+  <meta name="keywords" content="luxury travel, custom vacations, honeymoon tours, international travel, corporate tours, premium hotel bookings, NealVacation, chardham yatra, char dham yatra, chardham yatra by helicopter, chardham yatra from haridwar">
   
   <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="/logo.jpg">
@@ -318,6 +318,64 @@
       
       <div class="gallery-grid" id="gallery-container">
         <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Carousel (Virtual Tours) -->
+  <section id="virtual-experience" class="video-carousel-section" style="background: var(--card-bg); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 5rem 0;">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Virtual Experience</span>
+        <h2 class="section-title">Featured Travel Videos</h2>
+      </div>
+      
+      <div class="video-carousel-container" style="position: relative; max-width: 900px; margin: 0 auto; overflow: hidden;">
+        <div class="video-carousel" id="video-carousel" style="display: flex; transition: transform 0.5s ease-in-out;">
+          
+          <!-- Slide 1: Char Dham Yatra video -->
+          <div class="video-slide active" data-index="0" style="min-width: 100%; box-sizing: border-box; padding: 0 10px;">
+            <div class="video-wrapper glass-panel" style="border-radius: var(--radius-xl); overflow: hidden; padding: 1.5rem; display: flex; flex-direction: column; gap: 1.5rem; box-shadow: var(--card-shadow);">
+              <video class="carousel-video" controls poster="/logo.jpg" style="width: 100%; border-radius: var(--radius-md); max-height: 480px; object-fit: cover; border: 1px solid var(--border-color);">
+                <source src="/packages/neal vacation char dham yatra.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-caption" style="text-align: center; padding: 0.5rem 1rem;">
+                <h3 style="font-family: var(--font-outfit); font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">Char Dham Yatra Cinematic Video</h3>
+                <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">Witness the sacred and majestic journey to Yamunotri, Gangotri, Kedarnath, and Badrinath in full glory.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Slide 2: Maldives video -->
+          <div class="video-slide" data-index="1" style="min-width: 100%; box-sizing: border-box; padding: 0 10px;">
+            <div class="video-wrapper glass-panel" style="border-radius: var(--radius-xl); overflow: hidden; padding: 1.5rem; display: flex; flex-direction: column; gap: 1.5rem; box-shadow: var(--card-shadow);">
+              <video class="carousel-video" controls style="width: 100%; border-radius: var(--radius-md); max-height: 480px; object-fit: cover; border: 1px solid var(--border-color);">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-maldives-resort-drone-shot-41775-large.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-caption" style="text-align: center; padding: 0.5rem 1rem;">
+                <h3 style="font-family: var(--font-outfit); font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">Luxury Maldives Resort Experience</h3>
+                <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">A panoramic drone view highlighting premium water bungalows, crystal clear waters, and private white beaches.</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <button class="carousel-nav-btn prev" id="video-prev" aria-label="Previous Slide" style="position: absolute; top: 40%; left: 25px; transform: translateY(-50%); background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--text-main); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: var(--transition-fast); z-index: 10; box-shadow: var(--glass-shadow);">
+          <i data-lucide="chevron-left"></i>
+        </button>
+        <button class="carousel-nav-btn next" id="video-next" aria-label="Next Slide" style="position: absolute; top: 40%; right: 25px; transform: translateY(-50%); background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--text-main); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: var(--transition-fast); z-index: 10; box-shadow: var(--glass-shadow);">
+          <i data-lucide="chevron-right"></i>
+        </button>
+        
+        <!-- Carousel Dots -->
+        <div class="video-dots" id="video-dots" style="display: flex; justify-content: center; gap: 0.8rem; margin-top: 1.5rem;">
+          <span class="video-dot active" data-dot="0" style="width: 10px; height: 10px; border-radius: 50%; background: var(--border-color); cursor: pointer; transition: var(--transition-fast);"></span>
+          <span class="video-dot" data-dot="1" style="width: 10px; height: 10px; border-radius: 50%; background: var(--border-color); cursor: pointer; transition: var(--transition-fast);"></span>
+        </div>
       </div>
     </div>
   </section>

@@ -237,6 +237,32 @@ const PACKAGES = [
     visa: 'Not Required',
     accommodation: '3★/4★ Boutique Heritage Stays',
     pdf: '/packages/VARANASI,VINDHYACHAL,CHITRAKOOT, PRAYAGRAJ AND AYODHYA TOUR PACKAGE 06 NIGHT  07 DAYS BHUDARSHAN.pdf'
+  },
+  {
+    id: 'pkg-chardham-helicopter',
+    name: 'Char Dham Yatra by Helicopter',
+    category: 'luxury',
+    duration: '6 Days / 5 Nights',
+    price: 240001,
+    rating: '5.0',
+    img: 'https://www.chardhamtour.in/blog/wp-content/uploads/2024/03/How-to-Plan-For-Char-Dham-Yatra-by-Helicopter.jpg',
+    highlights: ['VIP Darshan', 'Kedarnath & Badrinath', 'Yamunotri & Gangotri'],
+    visa: 'Not Required',
+    accommodation: 'Super Deluxe Hotels & Stays',
+    pdf: '/packages/Char Dham Yatra by Helicopter.pdf'
+  },
+  {
+    id: 'pkg-chardham-haridwar',
+    name: 'Chardham Yatra From Haridwar',
+    category: 'family',
+    duration: '10 Days / 9 Nights',
+    price: 27001,
+    rating: '4.8',
+    img: 'https://srmholidays.in/wp-content/uploads/2021/03/Chardham_yatra-Package-From-Haridwar_Taxi_service.jpg',
+    highlights: ['10 Days Guided Tour', 'Ganga Aarti at Haridwar', 'All Four Dhams Covered'],
+    visa: 'Not Required',
+    accommodation: 'Comfortable Deluxe Hotels',
+    pdf: '/packages/Chardham Yatra From Haridwar 10d9n.pdf'
   }
 ];
 
@@ -258,9 +284,9 @@ const EXPERIENCES = [
 ];
 
 const TESTIMONIALS = [
-  { name: 'Rishi Srivastav', role: 'Owner,Neal infratech', avatar: 'https://media-lko1-2.cdn.whatsapp.net/v/t61.24694-24/738503781_1769555614420132_7336010525148402842_n.jpg?ccb=11-4&oh=01_Q5Aa5AFQVJkvgChDn6DojRbUnpnh9Ik112JQa0eDz7jyUhsLmg&oe=6A64D966&_nc_sid=5e03e0&_nc_cat=107', rating: 5, text: 'NealVacation planned our global corporate retreat in Paris. The logistics were flawless, luxury accommodations were out of this world, and their 24/7 concierge took care of every request instantly!' },
-  { name: 'Sophia & Liam', role: 'Honeymooners', avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80', rating: 5, text: 'Our honeymoon in the Maldives was pure magic. The private water villa, candlelight beach dinner, and airport transfers arranged by NealVacation made us feel like royalty. Thank you!' },
-  { name: 'Harshit Jha', role: 'Digital influencer', avatar: 'https://media-lko1-2.cdn.whatsapp.net/v/t61.24694-24/594539464_2330755740667633_1982193046938899641_n.jpg?ccb=11-4&oh=01_Q5Aa5AEEG1nKRhVy6MHYApzN_-OuMeRmL9CSzMzgxQWtxjvKHw&oe=6A64CB81&_nc_sid=5e03e0&_nc_cat=104', rating: 5, text: 'The Rajasthan heritage package exceeded all our expectations. Staying at the palaces made us feel so connected to royalty. Incredible visa support, cab services, and guided tour layouts.' }
+  { name: 'Rishi Srivastav', role: 'Owner, Neal Infratech', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80', rating: 5, text: 'NealVacation planned our global corporate retreat in Paris. The logistics were flawless, luxury accommodations were out of this world, and their 24/7 concierge took care of every request instantly!' },
+  { name: 'Sophia & Liam', role: 'Honeymooners', avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=761&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', rating: 5, text: 'Our honeymoon in the Maldives was pure magic. The private water villa, candlelight beach dinner, and airport transfers arranged by NealVacation made us feel like royalty. Thank you!' },
+  { name: 'Harshit Jha', role: 'Digital Influencer', avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80', rating: 5, text: 'The Rajasthan heritage package exceeded all our expectations. Staying at the palaces made us feel so connected to royalty. Incredible visa support, cab services, and guided tour layouts.' }
 ];
 
 const GALLERY = [
@@ -325,6 +351,7 @@ window.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
   initCursorGlow();
   initListeners();
+  initVideoCarousel();
 });
 
 // --- LOADING SCREEN ---
@@ -816,12 +843,12 @@ function saveLeadToDb(lead) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(lead)
   })
-  .then(res => {
-    if (res.ok) {
-      console.log('Lead saved to MongoDB successfully');
-    }
-  })
-  .catch(err => console.error('Error posting lead to MongoDB:', err));
+    .then(res => {
+      if (res.ok) {
+        console.log('Lead saved to MongoDB successfully');
+      }
+    })
+    .catch(err => console.error('Error posting lead to MongoDB:', err));
 }
 
 // Helper to programmatically construct custom itineraries
@@ -1111,7 +1138,7 @@ function handleLiveChat() {
   loadBubble.style.boxShadow = '0 1px 0.5px rgba(0,0,0,0.13)';
   loadBubble.style.lineHeight = '1.4';
   loadBubble.innerHTML = '<em>Redirecting you to our WhatsApp chat...</em>';
-  
+
   setTimeout(() => {
     chatBody.appendChild(loadBubble);
     chatBody.scrollTop = chatBody.scrollHeight;
@@ -1597,4 +1624,68 @@ function showToast(message, isSuccess = false) {
     toast.style.transform = 'translateX(-50%) translateY(100px)';
     setTimeout(() => toast.remove(), 400);
   }, 3500);
+}
+
+// --- VIDEO CAROUSEL FUNCTIONALITY ---
+function initVideoCarousel() {
+  const carousel = document.getElementById('video-carousel');
+  const prevBtn = document.getElementById('video-prev');
+  const nextBtn = document.getElementById('video-next');
+  const dots = document.querySelectorAll('.video-dot');
+  const slides = document.querySelectorAll('.video-slide');
+
+  if (!carousel || !prevBtn || !nextBtn) return;
+
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
+
+    // Pause all videos
+    slides.forEach(slide => {
+      const video = slide.querySelector('video');
+      if (video) video.pause();
+    });
+
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+
+    // Update active class on slides
+    slides.forEach((slide, idx) => {
+      if (idx === index) {
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
+      }
+    });
+
+    // Update dots
+    dots.forEach((dot, idx) => {
+      if (idx === index) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+
+    currentIndex = index;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    showSlide(currentIndex - 1);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    showSlide(currentIndex + 1);
+  });
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const targetIndex = parseInt(dot.getAttribute('data-dot'));
+      showSlide(targetIndex);
+    });
+  });
+
+  // Set initial state
+  showSlide(0);
 }
